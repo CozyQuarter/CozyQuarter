@@ -2,6 +2,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 // pages
 import Home from "./pages/Home"
+import AboutUs from "./pages/AboutUs"
+import FAQ from "./pages/FAQ"
 import Header from "./components/Header"
 
 function App() {
@@ -11,10 +13,22 @@ function App() {
        <Header />
        <div className="pages">
         <Routes>
+
           <Route
           path = "/"
           element={<Home />}
           />
+
+          <Route
+          path = "/AboutUs/"
+          element={<AboutUs />}
+          />
+
+          <Route
+          path = "/FAQ/"
+          element={<FAQ />}
+          />
+          
         </Routes>
        </div>
       </BrowserRouter>
