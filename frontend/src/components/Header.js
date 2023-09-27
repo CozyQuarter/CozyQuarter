@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import logo from "./logo.png";
 
 const Header = () => {
 
@@ -6,8 +7,7 @@ const Header = () => {
         <header>
             <div className = "container">
                 <Link to = "/">
-                    <h1>CozyQuarter</h1>
-                    <p><h3>Elevating RPI Dorm Choices! </h3></p>
+                    <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
                 </Link>
                 <h3> Freshman </h3>
                 <h3> Sophomore </h3>

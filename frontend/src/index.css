@@ -21,9 +21,10 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #ea5455;
 }
 header a {
-  color: #333;
+  color: #ea5455;
   text-decoration: none;
 }
 .pages{
