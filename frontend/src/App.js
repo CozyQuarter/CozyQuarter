@@ -2,11 +2,13 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 // pages
 import Home from "./pages/Home"
+import Header from "./components/Header"
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+       <Header />
        <div className="pages">
         <Routes>
           <Route
