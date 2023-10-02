@@ -17,7 +17,7 @@ function App() {
         <Routes>
 
           <Route
-          path = "/Home"
+          path = "/"
           element={<Home />}
           />
 

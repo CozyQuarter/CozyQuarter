@@ -10,11 +10,10 @@ const Home = () => {
                         <b>Welcome to CozyQuarter</b>
                     </div>
                     <h3 className="my-heading"><em>Elevating <span class="highlight-red">RPI Dorm</span> Choices!</em></h3>
-                    <p>CozyQuarter is a hub for RPI students and past residents to share 
-                        and explore feedback on on-campus dorms. By fostering transparent communication, 
-                        it provides a platform for current and prospective students to navigate through 
-                        dormitory options. Through candid reviews, visuals, and shared experiences, 
-                        individuals can make informed housing choices for a better college living experience.</p>
+                    <p>Discover all you need to simplify your dorm search experience and gain insights from
+                        reviews by RPI students and alumni - your gateway to a well-informed campus living
+                        choice awaits!
+                    </p>
                 </div>
                 <div className="right-panel">
                     <img src={dorm} alt="Descriptive text" className="responsive-image"/>
