@@ -55,7 +55,7 @@ const Header = () => {
                     <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
                 </Link>
 
-                <Link to = "/Home/">
+                <Link to = "/">
                     <h3> Home </h3>
                 </Link>
 
