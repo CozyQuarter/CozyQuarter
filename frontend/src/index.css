@@ -9,6 +9,10 @@
 body {
   background: #fff;
   margin: 0;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
   font-family: "Poppins";
 }
 header {
@@ -66,42 +70,20 @@ header a {
   padding-bottom: 0px;
 }
 
-.left-panel2,
-.right-panel2 {
-  flex: 5;
-  padding-top: 20px;
-  padding-bottom: 0px;
-}
-
 .left-panel {
   flex: 6;
-  padding-left: 55px;
+  padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 0px;
   background-color: hsl(0, 0%, 100%); 
 }
 
 .right-panel {
-  flex: 4;
+  flex: 3;
   padding-left: 20px;
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: hsl(0, 0%, 100%); 
-}
-
-.left-panel2 {
-  flex: 7;
-  padding-left: 55px;
-  padding-top: 20px;
-  padding-bottom: 0px;
-  background-color: hsl(0, 0%, 100%); 
-}
-
-.right-panel2 {
-  flex: 2;
-  padding-left: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-right: 20px;
   background-color: hsl(0, 0%, 100%); 
 }
 
@@ -130,12 +112,13 @@ header a {
 /* big header, black */
 .custom-heading {
   font-size: 2.5em; 
+  color: #212121;
 }
 
 /* smaller header, red */
 .custom-heading2 {
   font-size: 1.5em; 
-  color: #ea5455
+  color: #ea5455;
 }
 
 .highlight-red {
@@ -153,4 +136,5 @@ header a {
   padding-left: 240px;
   margin: 5px;
   line-height: 1.5;
+  color: #212121;
 }

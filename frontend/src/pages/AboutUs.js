@@ -28,7 +28,7 @@ const AboutUs = () => {
         </div>
 
         <div className="panels">
-            <div className="left-panel2">
+            <div className="left-panel">
             <div className="custom-heading2">
                     <b>Meet the Team</b>
                 </div>
