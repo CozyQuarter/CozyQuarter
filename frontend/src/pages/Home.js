@@ -1,5 +1,7 @@
 import React from 'react';
 import dorm from './dorm.jpg';  // Make sure to import the image
+import MapComponent from './components/CampusMap'; 
+
 
 const Home = () => {
     return (
@@ -20,6 +22,11 @@ const Home = () => {
                     
                 </div>
             </div>
+            <div className="panel">
+                 <div className="panel-body">
+                    <MapComponent />
+                </div>
+            </div>  
         </div>
     );
 };
