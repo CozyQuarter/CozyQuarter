@@ -51,6 +51,7 @@ header a {
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   padding: 8px;
   z-index: 1000; /* ensure dropdown appears above other content */
+  cursor: pointer;
 }
 
 .divider {
@@ -177,4 +178,50 @@ header a {
   border:0;
   width: 100%;
   height: 100%;
+}
+
+/* for collapsible component */
+.collapsible {
+  width:fit-content;
+  font-family: "Poppins";
+  font-size: 1em;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 15px;
+  padding-left: 0px;
+  align-items: left;
+  align-self: start;
+  justify-content: flex-start;
+  display: inline-block;
+}
+
+.toggle {
+  width:fit-content;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1em;
+  align-items: left;
+  align-self: start;
+  justify-content: flex-start;
+  font-family: "Poppins";
+  font-size: 1em;
+}
+
+.content {
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  display: none;
+}
+
+.show {
+  display: block;
+  align-items: left;
 }

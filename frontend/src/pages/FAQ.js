@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import dorm3 from './dorm3.jpg';  // Make sure to import the image
 import rpi_logo from './rpi_logo.png'
+import Collapsible from './components/Collapsible';
 
 const FAQ = () => {
     return (
@@ -62,36 +63,39 @@ const FAQ = () => {
                 <b>Frequently Asked Questions (FAQ)</b>
             </div>
 
-            <p><i><b>Q:</b></i> Are on-campus housing requirements mandatory?</p>
-            <p><i><b>A:</b></i> Yes, RPI students are required to live on campus as freshmen,
-            sophomores, and during Arch summer term. Students with financial or medical
-            circumstances can request a housing waiver. More info at <Link to =
-            "https://sll.rpi.edu/residential-commons/housing-requirement">Student Living
-            and Learning</Link>.
-            </p>
+            <Collapsible label='Are on-campus housing requirements mandatory?'>
+                Yes, RPI students are required to live on campus as freshmen,
+                sophomores, and during Arch summer term. Students with financial or medical
+                circumstances can request a housing waiver. More info at <Link to =
+                "https://sll.rpi.edu/residential-commons/housing-requirement">Student Living
+                and Learning</Link>.
+            </Collapsible>
 
-            <p><br></br></p>
+            <br></br>
 
-            <p><i><b>Q:</b></i> What is the process for applying for on-campus housing?</p>
-            <p><i><b>A:</b></i> You can apply for on-campus housing through SLL at this
-            link: <Link to = "https://sll.rpi.edu/apply">Housing Application</Link>.
-            </p>
+            <Collapsible label='What is the process for applying for on-campus housing?'>
+                You can apply for on-campus housing through SLL at this
+                link: <Link to = "https://sll.rpi.edu/apply">Housing Application</Link>.
+            </Collapsible>
 
-            <p><br></br></p>
-            
+            <br></br>
 
-            <p><i><b>Q:</b></i> What is included in the room and what will I need to bring?</p>
-            <p><i><b>A:</b></i> SLL provides a short recommended packing list specific to RPI: <Link to =
-            "https://sll.rpi.edu/packinglist">Packing List</Link>. </p>
-            <p>For longer packing lists
-            with more detailed tips on living in a dorm for the first time, there are many
-            helpful internet resources, such as this article: <Link to = 
-            "https://blog.prepscholar.com/college-packing-list">The Ultimate College
-            Packing List</Link>.</p>
-            <p> SLL also provides a list of prohibited items. Be careful not to bring these
-                to your dorm, because they can be confiscated or removed: <Link to =
-                "https://sll.rpi.edu/prohibited-items">Prohibited Items</Link>.
-            </p>
+            <Collapsible label='What is included in the room and what will I need to bring?'>
+                SLL provides a short recommended packing list specific to RPI: <Link to =
+                "https://sll.rpi.edu/packinglist">Packing List</Link>.
+                <p>For longer packing lists
+                with more detailed tips on living in a dorm for the first time, there are many
+                helpful online resources, such as this article: <Link to = 
+                "https://blog.prepscholar.com/college-packing-list">The Ultimate College
+                Packing List</Link>.</p>
+                <p> SLL also provides a list of prohibited items. Be careful not to bring these
+                    to your dorm, because they can be confiscated or removed: <Link to =
+                    "https://sll.rpi.edu/prohibited-items">Prohibited Items</Link>.
+                </p>
+            </Collapsible>
+
+            <br></br>
+            <br></br>
         </div>
         </div>
         </div>
