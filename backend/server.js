@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
 // Listen for requests
 // The port is just a random number, we can change it
 // Also the message can be changed
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log("Listening on port 4000")
 })
