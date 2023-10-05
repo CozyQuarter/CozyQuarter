@@ -1,3 +1,5 @@
+// define path
+const path = require('path')
 const express = require('express')
 
 // Express app
@@ -11,13 +13,22 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.get('/', (req, res) => {
-    res.json({mssg: "Welcome to CozyQuarter!"})
-})
+app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
+});
+
+
+// app.get('/', (req, res) => {
+//     res.json({mssg: "Welcome to CozyQuarter!"})
+// })
 
 // Listen for requests
 // The port is just a random number, we can change it
 // Also the message can be changed
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log("Listening on port 4000")
 })
