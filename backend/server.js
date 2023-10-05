@@ -13,9 +13,12 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.use(express.static('/frontend/public'));
-app.get('*', (req, res) => {
-    res.sendFile('/frontend/public/index.html', { root: __dirname });
+app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
 });
 
 
