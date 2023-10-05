@@ -1,4 +1,4 @@
-
+require('dotenv').config({ path: './.env' })
 const express = require('express')
 
 // Express app
@@ -12,9 +12,15 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.get('/', (req, res) => {
-    res.json({mssg: "Welcome to CozyQuarter!"})
-})
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+    app.use(express.static('../frontend/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '../frontend/build/index.html'));
+    });
+}
+// app.get('/', (req, res) => {
+//     res.json({mssg: "Welcome to CozyQuarter!"})
+// })
 
 // Listen for requests
 // The port is just a random number, we can change it
