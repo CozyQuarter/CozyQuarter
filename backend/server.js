@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.use(express.static('../frontend/build'));
+app.use(express.static('../frontend/public'));
 app.get('*', (req, res) => {
     res.sendFile('../frontend/public/index.html', { root: __dirname });
 });
