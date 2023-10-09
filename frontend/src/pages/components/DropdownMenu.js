@@ -16,6 +16,11 @@ const DropdownMenu = ({ items }) => {
                 item.isDivider ? (
                     <div key={index} className="divider"></div>
                 ) : (
+                item.label === 'BARH' ? (
+                    <Link key={index} to={`/freshman/barh`}>
+              <div>{item.label}</div>
+            </Link>
+                ) :   
                     <Link key={index} to={item.link}>
                         <div>{item.label}</div>
                     </Link>
