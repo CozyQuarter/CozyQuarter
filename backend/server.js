@@ -20,33 +20,29 @@ try {
   console.log(error)
 }
 
+// Every time we get a request, log the path and method
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
+})
+
+// Routes
+app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
+
 app.use(routes);
+
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Listening on ${port}`)
   // Perform a database connection when server starts
 
 });
-// Middleware
-// Every time we get a request, log the path and method
-// app.use((req, res, next) => {
-//     console.log(req.path, req.method)
-//     next()
-// })
-
-// // Routes
-// app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
-
-// // ...
-// // Right before your app.listen(), add this:
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
-// });
 
 
-// // app.get('/', (req, res) => {
-// //     res.json({mssg: "Welcome to CozyQuarter!"})
-// // })
 
 // // Listen for requests
 // // The port is just a random number, we can change it
