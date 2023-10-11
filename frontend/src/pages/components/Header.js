@@ -1,3 +1,6 @@
+// The header shows at the top of the screen and has:
+// Logo (goes home), Search bar, Freshman, Sophomore, Upperclass (Dropdowns), Sign In
+
 import { Link } from 'react-router-dom';
 import logo from "./logo.png";
 import React, { useState } from 'react';
@@ -55,10 +58,6 @@ const Header = () => {
                     <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
                 </Link>
 
-                <Link to = "/">
-                    <h3> Home </h3>
-                </Link>
-
                 <div 
                     onMouseEnter={() => handleMouseEnter('freshman')} 
                     onMouseLeave={handleMouseLeave}
@@ -97,14 +96,6 @@ const Header = () => {
                         </div>
                     )}
                 </div>
-
-                <Link to = "/FAQ/">
-                    <h3> FAQ </h3>
-                </Link>
-
-                <Link to = "/AboutUs/">
-                    <h3> About Us </h3>
-                </Link>
                 
             </div>
         </header>
