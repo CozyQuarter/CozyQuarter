@@ -21,6 +21,8 @@ try {
   console.log(error)
 }
 
+app.use(routes);
+
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -29,8 +31,6 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
-
-app.use(routes);
 
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
@@ -42,12 +42,3 @@ app.listen(port, () => {
   // Perform a database connection when server starts
 
 });
-
-
-
-// // Listen for requests
-// // The port is just a random number, we can change it
-// // Also the message can be changed
-// app.listen(process.env.PORT || 4000, () => {
-//     console.log("Listening on port 4000")
-// })
