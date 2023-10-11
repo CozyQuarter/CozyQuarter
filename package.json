@@ -3,5 +3,9 @@
    "scripts": {
       "start": "node backend/server.js",
       "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
+    },
+   "engines": {
+      "node": "v18.18.0",
+      "npm": "9.8.1"
     }
 }
