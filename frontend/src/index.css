@@ -9,9 +9,7 @@
 body {
   background: #fff;
   margin: 0;
-  padding-left: 40px;
   padding-top: 20px;
-  padding-right: 20px;
   padding-bottom: 0px;
   font-family: "Poppins";
 }
@@ -22,41 +20,34 @@ header .container {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 5px;
-  padding-bottom: 40px;
-  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #ea5455;
 }
-.container {
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  width: 100%;
-}
+
 /* Used for the footer */
 .footer {
-  margin-top:10px;
-  max-width: 1400px;
-  padding-left: 0px;
-  padding-right: 0px;
+  color: #212121;
+  margin-top:20px;
   margin-right: 0px;
   margin-left: 0px;
-  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
   padding-top: 5px;
   padding-bottom: 20px;
-  padding-right: 10px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content:space-evenly;
   background-color:#f2f2f2;
   background-clip: border-box;
-  color: black;
 }
 header a {
-  color: #ea5455;
+  color: #212121;
   text-decoration: none;
 }
 .pages{
@@ -94,8 +85,8 @@ header a {
   display: flex;
   justify-content: space-between;
   padding-left: 50px;
-  padding-right: 50px;
-
+  padding-right: 200px;
+  width: 1000px;
 }
 
 .left-panel,
@@ -103,11 +94,12 @@ header a {
   flex: 5;
   padding-top: 20px;
   padding-bottom: 0px;
+  padding-left: 50px;
 }
 
 .left-panel {
   flex: 6;
-  padding-left: 20px;
+  padding-left: 50px;
   padding-top: 20px;
   padding-bottom: 0px;
   background-color: hsl(0, 0%, 100%); 
@@ -196,8 +188,8 @@ header a {
 
 /* for map.css */
 .map-container {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .map-iframe {
@@ -241,6 +233,7 @@ header a {
   width: auto;
   height: auto;
   margin-top: 10px;
+  margin-left: 50px;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;

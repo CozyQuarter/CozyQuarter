@@ -3,7 +3,7 @@ function MapComponent() {
       <div className="map-container">
         <iframe
           title='Campus Map'
-          width="1300vh"
+          width="1200vh"
           height="500vh"
           style={{ border: 0 }}
           loading="lazy"
