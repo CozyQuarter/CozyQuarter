@@ -13,8 +13,11 @@ body {
   padding-bottom: 0px;
   font-family: "Poppins";
 }
-header {
+/* header and dropdown */
+header a {
   background: #fff;
+  color: #ea5455;
+  text-decoration: none;
 }
 header .container {
   max-width: 1400px;
@@ -29,15 +32,18 @@ header .container {
   color: #ea5455;
 }
 
-/* Used for the footer */
-.footer {
+/* footer */
+footer a {
   color: #212121;
+  text-decoration: none;
+}
+.footer {
   margin-top:20px;
   margin-right: 0px;
   margin-left: 0px;
   padding-left: 0px;
   padding-right: 0px;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 20px;
   width: 100%;
   display: flex;
@@ -46,10 +52,7 @@ header .container {
   background-color:#f2f2f2;
   background-clip: border-box;
 }
-header a {
-  color: #212121;
-  text-decoration: none;
-}
+
 .pages{
   padding: 0px;
   margin: 0 auto;

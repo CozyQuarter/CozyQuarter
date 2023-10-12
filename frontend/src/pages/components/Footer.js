@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 const Footer = () => {
 
     return (
-        <header style={{ position: 'relative' }}>
+        <footer style={{ position: 'relative' }}>
 
             <div className = "footer">
 
@@ -26,7 +26,7 @@ const Footer = () => {
                 </Link>
                 
             </div>
-        </header>
+        </footer>
     )
 }
 
