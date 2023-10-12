@@ -31,10 +31,9 @@ header .container {
 }
 /* Used for the footer */
 header .footer {
-  max-width: 1400px;
+  max-width: 100%;
   padding-top: 5px;
   padding-bottom: 40px;
-  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content:space-evenly;
