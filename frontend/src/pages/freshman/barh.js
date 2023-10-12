@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import dorm3 from './dorm3.jpg';
 import rpi_logo from './rpi_logo.png';
-import useAuth from '../../hooks/useAuth';
+import { useAuth } from '../../context/authContext';
 
 const BARHReviewPage = () => {
-  const { isAuthenticated, signInWithGoogle } = useAuth();
+  const { isAuthenticated, user, signInWithGoogle } = useAuth();
   const [reviewData, setReviewData] = useState({
     rating: '',
     comment: '',
@@ -43,7 +43,7 @@ const BARHReviewPage = () => {
 
   useEffect(() => {
     // Fetch and display reviews logic can be implemented here
-    // You may want to fetch and display reviews when the component mounts
+    //  may want to fetch and display reviews when the component mounts
     // Example: fetchReviews();
   }, []);
 
@@ -54,6 +54,7 @@ const BARHReviewPage = () => {
           <div className="custom-heading">
             <b>BARH Dormitory Reviews</b>
           </div>
+          {isAuthenticated && <p>Hi, {user.displayName}!</p>}
           <p>
             Welcome to the BARH Dormitory Review Page, where students can share their experiences and thoughts about BARH.
           </p>

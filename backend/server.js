@@ -2,16 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const routes = require('./routes');
+const bcrypt = require('bcrypt');
+const User =  require('./models/User');
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 8000;
 
+
+app.use(cors());
+app.use(express.json());
 if (process.env.NODE_ENV != 'production'){
   require('dotenv').config()
 }
 
-app.use(cors());
-app.use(express.json());
+
 
 
 try {
@@ -22,6 +26,52 @@ try {
 }
 
 app.use(routes);
+// Check if the user exists
+app.post('/api/checkUser', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const existentUser = await User.findOne({ email });
+
+    if (existentUser) {
+      return res.json({ userExists: true, displayName: existentUser.firstName });
+    } else {
+      return res.json({ userExists: false });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Create a new user
+app.post('/api/createUser', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+
+  try {
+    const existentUser = await User.findOne({ email });
+
+    if (!existentUser) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = await User.create({
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+      });
+
+      return res.json({ success: true, displayName: newUser.firstName });
+    }
+
+    return res.status(400).json({
+      message: 'Email already in use! Do you want to login instead?',
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {
