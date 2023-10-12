@@ -36,6 +36,7 @@ header .container {
 footer a {
   color: #212121;
   text-decoration: none;
+  z-index: 0;
 }
 .footer {
   margin-top:20px;
@@ -51,6 +52,7 @@ footer a {
   justify-content:space-evenly;
   background-color:#f2f2f2;
   background-clip: border-box;
+  z-index: 0;
 }
 
 .pages{

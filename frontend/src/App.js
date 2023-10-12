@@ -1,10 +1,20 @@
 import {BrowserRouter, Routes, Route, } from 'react-router-dom'
+
+// Home, About Us, FAQ
 import Home from "./pages/Home"
 import AboutUs from "./pages/AboutUs"
 import FAQ from "./pages/FAQ"
+
+// Header and footer
 import Header from "./pages/components/Header"
 import Footer from "./pages/components/Footer"
+
+// List of all dorms
+import AllDorms from "./pages/AllDorms"
+
+// Freshman dorms
 import BARHReviewPage from './pages/freshman/barh'
+
 
 function App() {
 
@@ -19,13 +29,18 @@ function App() {
         <Routes>
 
           <Route
-          path = "/freshman/barh"
-          element = {<BARHReviewPage />}
+          path = "/"
+          element={<Home />}
           />
 
           <Route
-          path = "/"
-          element={<Home />}
+          path = "/AllDorms/"
+          element={<AllDorms />}
+          />
+
+          <Route
+          path = "/freshman/barh"
+          element = {<BARHReviewPage />}
           />
 
           <Route
@@ -37,6 +52,8 @@ function App() {
           path = "/FAQ/"
           element={<FAQ />}
           />
+
+          
           
         </Routes>
        </div>

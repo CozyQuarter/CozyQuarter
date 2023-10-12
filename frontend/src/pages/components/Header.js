@@ -58,6 +58,10 @@ const Header = () => {
                     <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
                 </Link>
 
+                <Link to = "/AllDorms/">
+                    <h3>All Dorms</h3>
+                </Link>
+
                 <div 
                     onMouseEnter={() => handleMouseEnter('freshman')} 
                     onMouseLeave={handleMouseLeave}
