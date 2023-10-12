@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const routes = require('./routes');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User =  require('./models/User');
 const app = express();
 const path = require("path");
@@ -14,9 +14,6 @@ app.use(express.json());
 if (process.env.NODE_ENV != 'production'){
   require('dotenv').config()
 }
-
-
-
 
 try {
   mongoose.connect(process.env.MONGO_DB_CONNECTION)
