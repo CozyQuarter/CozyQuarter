@@ -29,6 +29,19 @@ header .container {
   justify-content: space-between;
   color: #ea5455;
 }
+/* Used for the footer */
+header .footer {
+  max-width: 1400px;
+  padding-top: 5px;
+  padding-bottom: 40px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  background-color:#f2f2f2;
+  background-clip: border-box;
+  color: black;
+}
 header a {
   color: #ea5455;
   text-decoration: none;
@@ -143,7 +156,6 @@ header a {
 .my-heading {
   padding: 2px;
   padding-left: 240px;
-  margin: 5px;
   line-height: 1.5;
   color: #212121;
 }
@@ -214,7 +226,6 @@ header a {
 .content {
   width: auto;
   height: auto;
-  margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;

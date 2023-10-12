@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import AboutUs from "./pages/AboutUs"
 import FAQ from "./pages/FAQ"
 import Header from "./pages/components/Header"
+import Footer from "./pages/components/Footer"
 import BARHReviewPage from './pages/freshman/barh'
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
           
         </Routes>
        </div>
+
+       <Footer />
       </BrowserRouter>
     </div>
   );
