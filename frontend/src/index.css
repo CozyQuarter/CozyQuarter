@@ -225,3 +225,32 @@ header a {
   display: block;
   align-items: left;
 }
+
+.barh-signin-button {
+  background-color: #ea5455; /* RPI's brand color */
+  color: white; /* Text color */
+  border: none; /* Remove default button border */
+  padding: 10px 20px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove default text decoration */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; /* Change cursor when hovering over the button */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+
+.continue-as-guest {
+  background-color: #ea5455; /* RPI's brand color */
+  color: white; /* Text color */
+  border: none; /* Remove default button border */
+  padding: 8px 16px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove default text decoration */
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 1px;
+  cursor: pointer; /* Change cursor when hovering over the button */
+  border-radius: 4px; /* Add rounded corners */
+}

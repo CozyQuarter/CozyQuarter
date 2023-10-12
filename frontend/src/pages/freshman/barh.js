@@ -118,9 +118,9 @@ const BARHReviewPage = () => {
             <p>
               To submit a review, please sign in with Google. If you don't have an account, you can continue as a guest and view existing reviews.
             </p>
-            <button onClick={signInWithGoogle}>Sign In with Google</button>
+            <button className="barh-signin-button" onClick={signInWithGoogle}>Sign In with Google</button>
             <p>or</p>
-            <button>Continue as Guest</button>
+            <button className="continue-as-guest"> Continue as Guest</button>
           </div>
         </div>
       )}
