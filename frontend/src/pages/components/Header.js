@@ -2,7 +2,7 @@
 // Logo (goes home), Search bar, Freshman, Sophomore, Upperclass (Dropdowns), Sign In
 
 import { Link } from 'react-router-dom';
-import logo from "./logo.png";
+import logo from "../../images/logo.png";
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
 

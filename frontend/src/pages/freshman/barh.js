@@ -1,10 +1,15 @@
-// BARHReviewPage.js
+// Barh.js
+// (Changed name from BARHReviewPage.js to Barh.js, to keep consistency across all dorm name styles)
+
+// Needs to be modified to use the ReviewPage component.
+// All authentication code should be moved to a different file
+
 import React, { useState, useEffect } from 'react';
-import dorm3 from './dorm3.jpg';
-import rpi_logo from './rpi_logo.png';
+import dorm3 from '../../images/dorm3.jpg';
+import rpi_logo from '../../images/rpi_logo.png';
 import { useAuth } from '../../context/authContext';
 
-const BARHReviewPage = () => {
+const Barh = () => {
   const { isAuthenticated, user, signInWithGoogle } = useAuth();
   const [reviewData, setReviewData] = useState({
     rating: '',
@@ -129,4 +134,4 @@ const BARHReviewPage = () => {
   );
 };
 
-export default BARHReviewPage;
+export default Barh;

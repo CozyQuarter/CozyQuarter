@@ -1,5 +1,5 @@
 import React from 'react';
-import dorm2 from './dorm2.jpg';  // Make sure to import the image
+import dorm2 from '../images/dorm2.jpg';  // Make sure to import the image
 
 const AboutUs = () => {
     return (

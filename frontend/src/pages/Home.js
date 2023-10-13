@@ -1,5 +1,5 @@
 import React from 'react';
-import dorm from './dorm.jpg';  // Make sure to import the image
+import dorm from '../images/dorm.jpg';  // Make sure to import the image
 import MapComponent from './components/CampusMap'; 
 
 

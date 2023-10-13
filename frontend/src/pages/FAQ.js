@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import dorm3 from './dorm3.jpg';  // Make sure to import the image
-import rpi_logo from './rpi_logo.png'
+import dorm3 from '../images/dorm3.jpg';  // Make sure to import the image
+import rpi_logo from '../images/rpi_logo.png'
 import Collapsible from './components/Collapsible';
 
 const FAQ = () => {
