@@ -17,7 +17,7 @@ import Barton from './pages/freshman/barton'
 import Bray from './pages/freshman/bray'
 import Cary from './pages/freshman/cary'
 import Crockett from './pages/freshman/crockett'
-import Davidson from './pages/freshman/davidson'
+import Davison from './pages/freshman/davison'
 import Hall from './pages/freshman/hall'
 import Nason from './pages/freshman/nason'
 import Nugent from './pages/freshman/nugent'
@@ -33,6 +33,7 @@ import North from './pages/sophomore/north'
 import Quad from './pages/sophomore/quad'
 import RahpA from './pages/sophomore/rahpa'
 import RahpB from './pages/sophomore/rahpb'
+import Stackwyck from './pages/sophomore/stackwyck'
 
 // Upperclass dorms
 import CityStationWest from './pages/upperclass/citystationwest'
@@ -86,8 +87,8 @@ function App() {
           element= {<Crockett />}
           />
           <Route
-          path = "/freshman/davidson"
-          element= {<Davidson />}
+          path = "/freshman/davison"
+          element= {<Davison />}
           />
           <Route
           path = "/freshman/hall"
@@ -141,6 +142,10 @@ function App() {
           <Route
           path = "/sophomore/rahpb"
           element= {<RahpB />}
+          />
+          <Route
+          path = "/sophomore/stackwyck"
+          element= {<Stackwyck />}
           />
 
           <Route

@@ -8,7 +8,7 @@
 }
 body {
   background: #fff;
-  margin: 0;
+  margin: -1;
   padding-top: 20px;
   padding-bottom: 0px;
   font-family: "Poppins";
@@ -126,8 +126,8 @@ footer a {
 /* Images */
 /* Dorm image */
 .dorm-image {
-  margin-right: 10px;
-  width: 45%; 
+  margin-right: 20px;
+  width: 55%; 
   height: auto;
   float: right;
 }
@@ -166,9 +166,15 @@ footer a {
   color: #ea5455;
 }
 
-/* smaller header, black */
+/* medium header, black */
+.custom-heading1 {
+  font-size: 2.3em; 
+  color: #212121;
+}
+
+/* way smaller header, black */
 .custom-heading3 {
-  font-size: 1.5em; 
+  font-size: 1.4em; 
   color: #212121;
 }
 
@@ -256,7 +262,7 @@ footer a {
 .content {
   width: auto;
   height: auto;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 50px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -284,6 +290,8 @@ footer a {
   border-radius: 4px; /* Add rounded corners */
 }
 
+/* Button to see all photos of a dorm */
+/* TODO: Fix position so it's not absolute, and depends on the picture instead */
 .photos-button {
   color: white;
   font-size: 1.5em;
@@ -294,6 +302,6 @@ footer a {
       -1px 1px 0 #000,
        1px 1px 0 #000;
   position: absolute;
-  right: 20px;
-  bottom: 0px;
+  right: 40px;
+  bottom: 15px;
 }

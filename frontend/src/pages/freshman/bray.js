@@ -7,8 +7,10 @@ const Bray = () => {
     
     return (
         <div>
-            <ReviewPage dorm="Bray"
-            type="Freshman">
+            <ReviewPage
+            dorm="Bray Hall"
+            type="Freshman"
+            img_name = "Bray">
             </ReviewPage>
 
         </div>

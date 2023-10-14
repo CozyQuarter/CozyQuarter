@@ -1,20 +1,20 @@
-// Sharp.js
+// Stackwyck.js
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"
 
-const Sharp = () => {
+const Stackwyck = () => {
     
     return (
         <div>
             <ReviewPage
-            dorm="Sharp Hall"
-            type="Freshman"
-            img_name="Sharp">
+            dorm="Stackwyck Apts"
+            type="Sophomore"
+            img_name="Stackwyck">
             </ReviewPage>
 
         </div>
     )
 }
 
-export default Sharp;
+export default Stackwyck;

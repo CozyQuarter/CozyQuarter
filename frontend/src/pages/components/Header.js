@@ -20,15 +20,15 @@ const Header = () => {
     
     const menuItems = {
         freshman: [
+            { label: 'BARH', link: '/freshman/barh' },
             { label: 'Barton', link: '/freshman/barton' },
             { label: 'Bray', link: '/freshman/bray' },
-            { label: 'BARH', link: '/freshman/barh' },
             { label: 'Cary', link: '/freshman/cary' },
             { label: 'Crockett', link: '/freshman/crockett' },
-            { label: 'Davidson', link: '/freshman/davidson' },
-            { label: 'Nugent', link: '/freshman/nugent' },
+            { label: 'Davison', link: '/freshman/davison' },
             { label: 'Hall', link: '/freshman/hall' },
             { label: 'Nason', link: '/freshman/nason' },
+            { label: 'Nugent', link: '/freshman/nugent' },            
             { label: 'Sharp', link: '/freshman/sharp' },
             { label: 'Warren', link: '/freshman/warren' },
         ],    
@@ -42,6 +42,7 @@ const Header = () => {
             { label: 'Quad', link: '/sophomore/quad' },
             { label: 'RAHP A', link: '/sophomore/rahpa' },
             { label: 'RAHP B', link: '/sophomore/rahpb' },
+            { label: 'Stackwyck', link: '/sophomore/stackwyck' },
         ],
 
         upperclass: [
