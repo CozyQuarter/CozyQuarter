@@ -15,6 +15,14 @@ const Barh = () => {
     rating: '',
     comment: '',
   });
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/getReviews')
+      .then(response => response.json())
+      .then(data => setReviews(data))
+      .catch(error => console.error('Error:', error));
+  }, []);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -115,6 +123,12 @@ const Barh = () => {
             <b>Latest Reviews</b>
           </div>
           {/* Add logic to fetch and display reviews here */}
+          {reviews.map(review => (
+            <div key={review._id}>
+              <h2>{review.rating}</h2>
+              <p>{review.comment}</p>
+            </div>
+          ))}
         </div>
       </div>
 

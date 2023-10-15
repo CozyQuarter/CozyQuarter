@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 const Db = process.env.DORMREVIEWS_DB_URI;
-const client = new MongoClient(Db);
+const client = new MongoClient(Db, { useNewUrlParser: true, useUnifiedTopology: true });
 
  
 var _db;
