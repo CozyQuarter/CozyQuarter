@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    reviews: [
-      {
-        dormId: { type: mongoose.Schema.Types.ObjectId, ref: 'Dorm', required: true },
-        rating: { type: Number, required: true },
-        comment: { type: String, required: true },
-        // Add other relevant fields for a review
-      },
-    ],
+const userSchema = new mongoose.Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  profilePicture: { type: String }, // This could be a URL to the profile picture
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
+});
 
-})
+const User = mongoose.model('User', userSchema);
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = User;

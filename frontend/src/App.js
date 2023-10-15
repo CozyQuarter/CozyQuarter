@@ -1,12 +1,15 @@
-import {BrowserRouter, Routes, Route, } from 'react-router-dom'
-
-// Header and footer
-import Header from "./pages/components/Header"
-import Footer from "./pages/components/Footer"
-
-// Stuff in header
-// Home
-import Home from "./pages/Home"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Header from './pages/components/Header';
+import Footer from './pages/components/Footer';
+import BARHReviewPage from './pages/freshman/barh';
+import Signup from './pages/components/auth/Signup';
+import Signin from './pages/components/auth/Signin';
+import Dashboard from './pages/components/auth/Dashboard';
+import LandingPage from './pages/components/auth/LandingPage/LandingPage';
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import FAQ from "./pages/FAQ";
 
 // List of all dorms
 import AllDorms from "./pages/AllDorms"
@@ -39,138 +42,146 @@ import Stackwyck from './pages/sophomore/stackwyck'
 import CityStationWest from './pages/upperclass/citystationwest'
 import Polytechnic from './pages/upperclass/polytechnic'
 
-// Stuff in footer
-// About Us and FAQ
-import AboutUs from "./pages/AboutUs"
-import FAQ from "./pages/FAQ"
-
-
 function App() {
-
   return (
-    
     <div className="App">
-
-      <BrowserRouter>
-       <Header />
-
-       <div className="pages">
+      <Router>
         <Routes>
+          {/* LandingPage, Signup, and Signin do not have Header and Footer */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/" element={<LandingPage />} />
 
+          {/* Other pages have Header and Footer */}
           <Route
-          path = "/"
-          element={<Home />}
-          />
-          <Route
-          path = "/AllDorms/"
-          element={<AllDorms />}
-          />
+            path="/*"
+            element={
+              <>
 
-          <Route
-          path = "/freshman/barh"
-          element = {<Barh />}
-          />
-          <Route
-          path = "/freshman/barton"
-          element= {<Barton />}
-          />
-          <Route
-          path = "/freshman/bray"
-          element= {<Bray />}
-          />
-          <Route
-          path = "/freshman/cary"
-          element= {<Cary />}
-          />
-          <Route
-          path = "/freshman/crockett"
-          element= {<Crockett />}
-          />
-          <Route
-          path = "/freshman/davison"
-          element= {<Davison />}
-          />
-          <Route
-          path = "/freshman/hall"
-          element= {<Hall />}
-          />
-          <Route
-          path = "/freshman/nason"
-          element= {<Nason />}
-          />
-          <Route
-          path = "/freshman/nugent"
-          element= {<Nugent />}
-          />
-          <Route
-          path = "/freshman/sharp"
-          element= {<Sharp />}
-          />
-          <Route
-          path = "/freshman/warren"
-          element= {<Warren />}
-          />
+                <Header />
+                <div className="pages">
+                  <Routes>
+                    <Route path="/dashboard" element={<Dashboard />} />
 
-          <Route
-          path = "/sophomore/blitman"
-          element= {<Blitman />}
-          />
-          <Route
-          path = "/sophomore/bryckwyck"
-          element= {<Bryckwyck />}
-          />
-          <Route
-          path = "/sophomore/colonie"
-          element= {<Colonie />}
-          />
-          <Route
-          path = "/sophomore/ecomplex"
-          element= {<EComplex />}
-          />
-          <Route
-          path = "/sophomore/north"
-          element= {<North />}
-          />
-          <Route
-          path = "/sophomore/quad"
-          element= {<Quad />}
-          />
-          <Route
-          path = "/sophomore/rahpa"
-          element= {<RahpA />}
-          />
-          <Route
-          path = "/sophomore/rahpb"
-          element= {<RahpB />}
-          />
-          <Route
-          path = "/sophomore/stackwyck"
-          element= {<Stackwyck />}
-          />
 
-          <Route
-          path = "/upperclass/citystationwest"
-          element= {<CityStationWest />}
-          />
-          <Route
-          path = "/upperclass/polytechnic"
-          element= {<Polytechnic />}
-          />
+                    <Route
+                      path="/home"
+                      element={<Home />}
+                    />
+                    <Route
+                      path="/AllDorms/"
+                      element={<AllDorms />}
+                    />
 
-          <Route
-          path = "/AboutUs/"
-          element={<AboutUs />}
-          />
-          <Route
-          path = "/FAQ/"
-          element={<FAQ />}
-          />
+                    <Route
+                      path="/freshman/barh"
+                      element={<Barh />}
+                    />
+                    <Route
+                      path="/freshman/barton"
+                      element={<Barton />}
+                    />
+                    <Route
+                      path="/freshman/bray"
+                      element={<Bray />}
+                    />
+                    <Route
+                      path="/freshman/cary"
+                      element={<Cary />}
+                    />
+                    <Route
+                      path="/freshman/crockett"
+                      element={<Crockett />}
+                    />
+                    <Route
+                      path="/freshman/davison"
+                      element={<Davison />}
+                    />
+                    <Route
+                      path="/freshman/hall"
+                      element={<Hall />}
+                    />
+                    <Route
+                      path="/freshman/nason"
+                      element={<Nason />}
+                    />
+                    <Route
+                      path="/freshman/nugent"
+                      element={<Nugent />}
+                    />
+                    <Route
+                      path="/freshman/sharp"
+                      element={<Sharp />}
+                    />
+                    <Route
+                      path="/freshman/warren"
+                      element={<Warren />}
+                    />
 
+                    <Route
+                      path="/sophomore/blitman"
+                      element={<Blitman />}
+                    />
+                    <Route
+                      path="/sophomore/bryckwyck"
+                      element={<Bryckwyck />}
+                    />
+                    <Route
+                      path="/sophomore/colonie"
+                      element={<Colonie />}
+                    />
+                    <Route
+                      path="/sophomore/ecomplex"
+                      element={<EComplex />}
+                    />
+                    <Route
+                      path="/sophomore/north"
+                      element={<North />}
+                    />
+                    <Route
+                      path="/sophomore/quad"
+                      element={<Quad />}
+                    />
+                    <Route
+                      path="/sophomore/rahpa"
+                      element={<RahpA />}
+                    />
+                    <Route
+                      path="/sophomore/rahpb"
+                      element={<RahpB />}
+                    />
+                    <Route
+                      path="/sophomore/stackwyck"
+                      element={<Stackwyck />}
+                    />
+
+                    <Route
+                      path="/upperclass/citystationwest"
+                      element={<CityStationWest />}
+                    />
+                    <Route
+                      path="/upperclass/polytechnic"
+                      element={<Polytechnic />}
+                    />
+
+                    <Route
+                      path="/AboutUs/"
+                      element={<AboutUs />}
+                    />
+                    <Route
+                      path="/FAQ/"
+                      element={<FAQ />}
+                    />
+                    {/* Redirect any unknown route to LandingPage */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                  </Routes>
+                </div>
+                <Footer />
+              </>
+            }
+          />
         </Routes>
-       </div>
-
-       <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
