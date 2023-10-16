@@ -7,6 +7,27 @@
 // named [Dorm].png, capitalized (in the exact same format as the dorm class name)
 
 import React from 'react';
+import { styled } from '@mui/material/styles';
+import Rating from '@mui/material/Rating';
+
+
+const OverallRating = styled(Rating)({
+    '& .MuiRating-iconFilled': {
+      color: '#ff6d75',
+    },
+    '& .MuiRating-iconHover': {
+      color: '#ff3d47',
+    },
+  });
+  
+const SubRating = styled(Rating)({
+    '& .MuiRating-iconFilled': {
+      color: '#ff6d75',
+    },
+    '& .MuiRating-iconHover': {
+      color: '#ff3d47',
+    },
+  });
 
 const ReviewPage = ({dorm, type, img_name}) => {
 
@@ -24,15 +45,14 @@ const ReviewPage = ({dorm, type, img_name}) => {
             <div class="custom-heading3">
 
                 <p>Dorm Type: {type}</p>
-                <p>[overall rating]</p>
+                <p> Overall:<OverallRating defaultValue={4.5} precision={0.5} readOnly/></p>
 
             </div>
 
             <div class="body">
-                <p>Building: [stars]</p>
-                <p>Room: [stars]</p>
-                <p>Location: [stars]</p>
-                <p>Cleanliness: [stars]</p>
+                <p>Building:    <SubRating readOnly size='small'/></p>
+                <p>Room:        <SubRating readOnly size='small'/></p>
+                <p>Location:    <SubRating readOnly size='small'/></p>
             </div>
 
             <div class="photos-button"><b> See Photos </b></div>
