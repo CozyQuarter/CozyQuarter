@@ -8,7 +8,7 @@ const Colonie = () => {
     return (
         <div>
             <ReviewPage
-            dorm="Colonie Apts"
+            dorm="Colonie"
             type="Sophomore"
             img_name="Colonie">
             </ReviewPage>
