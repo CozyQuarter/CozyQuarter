@@ -30,7 +30,7 @@
   margin-right: 0px;
   margin-left: 0px;
   width:90%;
-  height:auto;
+  height:100%;
   float: right;
 }
 
@@ -64,4 +64,5 @@
     margin: 4px 2px;
     cursor: pointer; /* Change cursor when hovering over the button */
     border-radius: 4px; /* Add rounded corners */
+    float: right;
   }

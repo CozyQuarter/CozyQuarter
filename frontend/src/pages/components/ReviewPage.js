@@ -7,6 +7,7 @@
 // named [Dorm].png, capitalized (in the exact same format as the dorm class name)
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ReviewPage.css'
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -53,6 +54,7 @@ const ReviewPage = ({dorm, type, img_name}) => {
                 <p>Room:        <SubRating readOnly size='small'/></p>
                 <p>Location:    <SubRating readOnly size='small'/></p>
             </div>
+
         </div>
         <div className = "right-panel2">
             <img src={require(`../../images/${img_path}`)} alt = "Outside of dorm" className="dorm-image" />
@@ -60,13 +62,24 @@ const ReviewPage = ({dorm, type, img_name}) => {
         </div>
         </div>
 
-        {/* Body of screen - list of reviews and "write review" */}
+        {/* Browse Reviews and Write Review button */}
+        <div class="panels">
         <div class="left-panel">
 
             <div class="custom-heading3">
                 <b>Browse Reviews</b>
             </div>
 
+        </div>
+        <div class = "right-panel">
+            {/* If user is not authenticated, this button is a link to the lander page */}
+            <Link to = "/" className="write-review-button">Sign In to Write Reviews</Link>
+            {/* Need to add functionality for if the user is logged in */}
+        </div>
+        </div>
+
+        <div class="left-panel">
+            Reviews go here
         </div>
         </div>
 
