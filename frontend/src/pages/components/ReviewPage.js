@@ -7,18 +7,17 @@
 // named [Dorm].png, capitalized (in the exact same format as the dorm class name)
 
 import React from 'react';
+import './ReviewPage.css'
 
 const ReviewPage = ({dorm, type, img_name}) => {
 
     let img_path = img_name+".png";
 
     return (
-        
-        <div class="body">
-
-        <div class="left-panel">
-            <img src={require(`../../images/${img_path}`)} alt = "Outside of dorm" className="dorm-image" />
-
+        <div class = "body">
+        {/* Header of screen - average reviews and photo */}
+        <div class="panels">
+        <div class="left-panel2">
             <div class="custom-heading1"><b> {dorm}</b> Reviews </div>
 
             <div class="custom-heading3">
@@ -34,10 +33,14 @@ const ReviewPage = ({dorm, type, img_name}) => {
                 <p>Location: [stars]</p>
                 <p>Cleanliness: [stars]</p>
             </div>
-
+        </div>
+        <div className = "right-panel2">
+            <img src={require(`../../images/${img_path}`)} alt = "Outside of dorm" className="dorm-image" />
             <div class="photos-button"><b> See Photos </b></div>
         </div>
+        </div>
 
+        {/* Body of screen - list of reviews and "write review" */}
         <div class="left-panel">
 
             <div class="custom-heading3">
@@ -45,8 +48,8 @@ const ReviewPage = ({dorm, type, img_name}) => {
             </div>
 
         </div>
-
         </div>
+
     );
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './pages/components/Header';
 import Footer from './pages/components/Footer';
-import BARHReviewPage from './pages/freshman/barh';
 import Signup from './pages/components/auth/Signup';
 import Signin from './pages/components/auth/Signin';
 import Dashboard from './pages/components/auth/Dashboard';
