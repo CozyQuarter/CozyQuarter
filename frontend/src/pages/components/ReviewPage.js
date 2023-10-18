@@ -34,7 +34,7 @@ const SubRating = styled(Rating)({
   const dorms = [
 
     {id:'BARH', name: 'BARH', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite'},
-    {id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite/Traditional'},
+    {id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite, Traditional'},
     {id: 'Bray', name: 'Bray Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
     {id: 'Cary', name: 'Cary Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
     {id: 'Crockett', name: 'Crockett Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
@@ -50,7 +50,7 @@ const SubRating = styled(Rating)({
     {id: 'Colonie', name: 'Colonie', folder: 'Sophomore', year: 'Sophomore', single_price: Infinity, double_price: 9120, triple_price: Infinity, room_type: 'Suite'},
     {id: 'EComplex', name: 'E-Complex', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
     {id: 'North', name: 'North Hall', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
-    {id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite/Traditional'},
+    {id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite, Traditional'},
     {id: 'RAHPA', name: 'RAHP-A', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
     {id: 'RAHPB', name: 'RAHP-B', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
     {id: 'Stacwyck', name: 'Stacwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},

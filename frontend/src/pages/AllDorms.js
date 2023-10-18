@@ -22,7 +22,9 @@ const AllDorms = () => {
     };
 
     const margin = {
-        marginLeft: "50px"
+        marginLeft: "50px",
+        position: "relative",
+        zIndex: "100"
     };
 
     // Dorm data pulled directly from SLL housing comparison
@@ -30,7 +32,7 @@ const AllDorms = () => {
     const dorms = [
 
         {id:'BARH', name: 'BARH', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite'},
-        {id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite/Traditional'},
+        {id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite, Traditional'},
         {id: 'Bray', name: 'Bray Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
         {id: 'Cary', name: 'Cary Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
         {id: 'Crockett', name: 'Crockett Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
@@ -46,7 +48,7 @@ const AllDorms = () => {
         {id: 'Colonie', name: 'Colonie', folder: 'Sophomore', year: 'Sophomore', single_price: Infinity, double_price: 9120, triple_price: Infinity, room_type: 'Suite'},
         {id: 'EComplex', name: 'E-Complex', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
         {id: 'North', name: 'North Hall', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
-        {id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite/Traditional'},
+        {id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite, Traditional'},
         {id: 'RAHPA', name: 'RAHP-A', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
         {id: 'RAHPB', name: 'RAHP-B', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
         {id: 'Stacwyck', name: 'Stacwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
@@ -140,7 +142,7 @@ const AllDorms = () => {
     // Return HTML
     return (
         <div>
-            <form>
+            <form class="body">
 
                 {/* Search bar */}
                 <span style={margin}>Search for a Dorm </span>
@@ -148,7 +150,7 @@ const AllDorms = () => {
 
                 {/* Sort by features */}
                 <span style={margin}>Sort By </span>
-                <select class='dropdown-menu' defaultValue={'name'} onChange={(e) => sortBy(e.target.value)}>
+                <select class="dropdown-menu-behind" defaultValue={'name'} onChange={(e) => sortBy(e.target.value)}>
                     <option value='name' disabled>None</option>
                     <option value='name'>Name</option>
                     <option value='year'>Year</option>
@@ -160,7 +162,7 @@ const AllDorms = () => {
 
                 {/* Sort order ascending/descending */}
                 <span style={margin}>Order </span>
-                <select class='dropdown-menu' defaultValue={'ascending'} onChange={(e) => sortOrder(e.target.value)}>
+                <select class="dropdown-menu-behind" defaultValue={'ascending'} onChange={(e) => sortOrder(e.target.value)}>
                     <option value="ascending" disabled>None</option>
                     <option value="ascending">Low to High</option>
                     <option value="descending">High to Low</option>
@@ -168,7 +170,7 @@ const AllDorms = () => {
 
                 {/* Filter Dorms */}
                 <span style={margin}>Filter By </span>
-                <select class='dropdown-menu' defaultValue={''} onChange={(e) => filter(e.target.value)}>
+                <select class="dropdown-menu-behind" defaultValue={''} onChange={(e) => filter(e.target.value)}>
                     <option value=''>None</option>
                     <option value="Freshman">Freshman</option>
                     <option value="Sophomore">Sophomore</option>
