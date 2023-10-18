@@ -13,19 +13,24 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      // Assuming signup is a function that makes a POST request
-      await signup({
-        firstName,
-        lastName,
-        email,
-        password,
-      });
-      // Redirect or handle success
+      const response = await signup(email, password, firstName, lastName);
+      const text = await response.text();
+      console.log('Response Text:', text);
+      if (response.headers.get('content-type')?.includes('application/json')) {
+        const data = await response.json();
+        console.log('Signup Response:', data);
+        console.log('Success signing up');
+        // Redirect or handle success
+      } else {
+        console.error('Invalid JSON response:', response);
+        setError('Failed to sign up. Please try again.');
+      }
     } catch (error) {
       console.error('Error signing up:', error.message);
       setError('Failed to sign up. Please try again.');
     }
   };
+
 
   return (
     <div>

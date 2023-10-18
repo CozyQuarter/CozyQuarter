@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-router.post('/createUser', async (req, res) => {
+router.post('/', async (req, res) => {
+  console.log('Route reached');
   try {
     const { firstName, lastName, email, password } = req.body;
 
@@ -16,7 +17,12 @@ router.post('/createUser', async (req, res) => {
         lastName,
         email,
         password: hashedPassword,
+        profilePicture,
       });
+
+      await user.save();
+
+      console.log('New user created;', user);
 
       return res.json({
         success: true,
@@ -25,9 +31,10 @@ router.post('/createUser', async (req, res) => {
     }
 
     return res.status(400).json({
-      error: 'Email already in use! Do you want to login instead?',
+      error: ('User already exists:', existentUser),
     });
   } catch (error) {
+    console.error('Error creating user:', error);
     return res.status(500).json({
       error: 'Internal Server Error',
     });
