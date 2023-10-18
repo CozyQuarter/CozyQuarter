@@ -35,7 +35,7 @@ import North from './pages/sophomore/north'
 import Quad from './pages/sophomore/quad'
 import RahpA from './pages/sophomore/rahpa'
 import RahpB from './pages/sophomore/rahpb'
-import Stackwyck from './pages/sophomore/stackwyck'
+import Stacwyck from './pages/sophomore/stacwyck'
 
 // Upperclass dorms
 import CityStationWest from './pages/upperclass/citystationwest'
@@ -150,8 +150,8 @@ function App() {
                       element={<RahpB />}
                     />
                     <Route
-                      path="/sophomore/stackwyck"
-                      element={<Stackwyck />}
+                      path="/sophomore/stacwyck"
+                      element={<Stacwyck />}
                     />
 
                     <Route

@@ -42,7 +42,7 @@ const Header = () => {
             { label: 'Quad', link: '/sophomore/quad' },
             { label: 'RAHP A', link: '/sophomore/rahpa' },
             { label: 'RAHP B', link: '/sophomore/rahpb' },
-            { label: 'Stackwyck', link: '/sophomore/stackwyck' },
+            { label: 'Stacwyck', link: '/sophomore/stacwyck' },
         ],
 
         upperclass: [
