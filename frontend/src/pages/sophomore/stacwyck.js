@@ -1,20 +1,20 @@
-// Stackwyck.js
+// Stacwyck.js
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"
 
-const Stackwyck = () => {
+const Stacwyck = () => {
     
     return (
         <div>
             <ReviewPage
-            dorm="Stackwyck Apts"
+            dorm="Stacwyck"
             type="Sophomore"
-            img_name="Stackwyck">
+            img_name="Stacwyck">
             </ReviewPage>
 
         </div>
     )
 }
 
-export default Stackwyck;
+export default Stacwyck;
