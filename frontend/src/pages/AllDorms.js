@@ -29,30 +29,30 @@ const AllDorms = () => {
     // Dorms without certain rooms get set to infinity so they go to the bottom of sorted order
     const dorms = [
 
-        {id:'BARH', name: 'BARH', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite'},
-        {id: 'Barton', name: 'Barton Hall', year: 'Freshman', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite/Traditional'},
-        {id: 'Bray', name: 'Bray Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
-        {id: 'Cary', name: 'Cary Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
-        {id: 'Crockett', name: 'Crockett Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
-        {id: 'Davison', name: 'Davison Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
-        {id: 'Hall', name: 'Hall Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
-        {id: 'Nason', name: 'Nason Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
-        {id: 'Nugent', name: 'Nugent Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
-        {id: 'Sharp', name: 'Sharp Hall', year: 'Freshman', single_price: 10720, double_price: Infinity, triple_price: Infinity, room_type: 'Suite'},
-        {id: 'Warren', name: 'Warren Hall', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
+        {id:'BARH', name: 'BARH', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite'},
+        {id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman/The Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite/Traditional'},
+        {id: 'Bray', name: 'Bray Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
+        {id: 'Cary', name: 'Cary Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
+        {id: 'Crockett', name: 'Crockett Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
+        {id: 'Davison', name: 'Davison Hall', folder: 'Freshman', year: 'Freshman/The Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
+        {id: 'Hall', name: 'Hall Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
+        {id: 'Nason', name: 'Nason Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional'},
+        {id: 'Nugent', name: 'Nugent Hall', folder: 'Freshman', year: 'Freshman/The Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
+        {id: 'Sharp', name: 'Sharp Hall', folder: 'Freshman', year: 'Freshman/The Arch', single_price: 10720, double_price: Infinity, triple_price: Infinity, room_type: 'Suite'},
+        {id: 'Warren', name: 'Warren Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
 
-        {id: 'Blitman', name: 'Blitman', year: 'Sophomore', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
-        {id: 'Bryckwyck', name: 'Bryckwyck', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
-        {id: 'Colonie', name: 'Colonie', year: 'Sophomore', single_price: Infinity, double_price: 9120, triple_price: Infinity, room_type: 'Suite'},
-        {id: 'EComplex', name: 'E-Complex', year: 'Sophomore', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
-        {id: 'North', name: 'North Hall', year: 'Sophomore', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
-        {id: 'Quad', name: 'Quadrangle', year: 'Sophomore', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite/Traditional'},
-        {id: 'RAHPA', name: 'RAHP-A', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
-        {id: 'RAHPB', name: 'RAHP-B', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
-        {id: 'Stacwyck', name: 'Stacwyck', year: 'Sophomore', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'Blitman', name: 'Blitman', folder: 'Sophomore', year: 'Sophomore/The Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite'},
+        {id: 'Bryckwyck', name: 'Bryckwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'Colonie', name: 'Colonie', folder: 'Sophomore', year: 'Sophomore', single_price: Infinity, double_price: 9120, triple_price: Infinity, room_type: 'Suite'},
+        {id: 'EComplex', name: 'E-Complex', folder: 'Sophomore', year: 'Sophomore/The Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
+        {id: 'North', name: 'North Hall', folder: 'Sophomore', year: 'Sophomore/The Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional'},
+        {id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore/The Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite/Traditional'},
+        {id: 'RAHPA', name: 'RAHP-A', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'RAHPB', name: 'RAHP-B', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'Stacwyck', name: 'Stacwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
 
-        {id: 'CityStationWest', name: 'City Station West', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
-        {id: 'Polytechnic', name: 'Polytechnic', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'CityStationWest', name: 'City Station West', folder: 'Upperclass', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
+        {id: 'Polytechnic', name: 'Polytechnic', folder: 'Upperclass', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment'},
         
     ];
 
@@ -101,7 +101,7 @@ const AllDorms = () => {
     // Filter dorms based on dropdown
     function filter(e) {
         const results = dorms.filter(dorm => {
-            if (e === "Freshman" || e === "Sophomore" || e === "Upperclass"){
+            if (e === "Freshman" || e === "Sophomore" || e === "The Arch" || e === "Upperclass"){
                 return dorm['year'].toLowerCase().includes(e.toLowerCase());
             }
             else if (e === "Suite" || e === "Traditional" || e === "Apartment"){
@@ -172,10 +172,11 @@ const AllDorms = () => {
                     <option value=''>None</option>
                     <option value="Freshman">Freshman</option>
                     <option value="Sophomore">Sophomore</option>
+                    <option value="The Arch">The Arch</option>
                     <option value="Upperclass">Upperclass</option>
                     <option value="Traditional">Traditional</option>
                     <option value="Suite">Suite</option>
-                    <option value="Apartment">Aparment</option>
+                    <option value="Apartment">Apartment</option>
                 </select>
 
             </form>
@@ -185,7 +186,7 @@ const AllDorms = () => {
                 {(
                     state.list.map(dorm => {
 
-                        const dorm_link = "/" + dorm.year.toLowerCase() + "/" + dorm.id.toLowerCase();
+                        const dorm_link = "/" + dorm.folder.toLowerCase() + "/" + dorm.id.toLowerCase();
 
                         let singles = "-";
                         if (dorm.single_price < Infinity){

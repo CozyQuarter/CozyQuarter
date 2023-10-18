@@ -60,7 +60,6 @@
     font-size: 1em;
     text-align: center; /* Center the text */
     text-decoration: none; /* Remove default text decoration */
-    display: inline-block;
     margin: 4px 2px;
     cursor: pointer; /* Change cursor when hovering over the button */
     border-radius: 4px; /* Add rounded corners */
