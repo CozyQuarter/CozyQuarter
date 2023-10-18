@@ -7,12 +7,7 @@ const Barh = () => {
     
     return (
         <div>
-            <ReviewPage
-            dorm="BARH"
-            type="Freshman"
-            img_name = "BARH">
-            </ReviewPage>
-
+            <ReviewPage dorm_id = 'BARH'></ReviewPage>
         </div>
     )
 }

@@ -8,9 +8,7 @@ const Stacwyck = () => {
     return (
         <div>
             <ReviewPage
-            dorm="Stacwyck"
-            type="Sophomore"
-            img_name="Stacwyck">
+            dorm_id="Stacwyck">
             </ReviewPage>
 
         </div>

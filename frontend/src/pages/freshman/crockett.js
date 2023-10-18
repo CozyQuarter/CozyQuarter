@@ -8,9 +8,7 @@ const Crockett = () => {
     return (
         <div>
             <ReviewPage
-            dorm="Crockett Hall"
-            type="Freshman"
-            img_name="Crockett">
+            dorm_id="Crockett">
             </ReviewPage>
 
         </div>

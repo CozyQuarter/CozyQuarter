@@ -8,9 +8,7 @@ const Quad = () => {
     return (
         <div>
             <ReviewPage
-            dorm="Quadrangle"
-            type="Sophomore"
-            img_name="Quad">
+            dorm_id="Quad">
             </ReviewPage>
 
         </div>
