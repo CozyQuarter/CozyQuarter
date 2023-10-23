@@ -13,17 +13,19 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
+      // Sign up the user
       const response = await signup(email, password, firstName, lastName);
-      const text = await response.text();
-      console.log('Response Text:', text);
-      if (response.headers.get('content-type')?.includes('application/json')) {
+
+      if (response.ok) {
+        console.log('User signed up successfully.');
+
+        // Check if the response includes an existing user (deleted)
         const data = await response.json();
-        console.log('Signup Response:', data);
-        console.log('Success signing up');
-        // Redirect or handle success
+        if (data.error && data.error.includes('User already exists')) {
+          console.log('Existing user detected. User deleted during signup.');
+        }
       } else {
-        console.error('Invalid JSON response:', response);
-        setError('Failed to sign up. Please try again.');
+        console.error('Failed to sign up. Please try again.');
       }
     } catch (error) {
       console.error('Error signing up:', error.message);

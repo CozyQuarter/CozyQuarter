@@ -1,27 +1,27 @@
-import app from "./server.js"
-import mongodb from "mongodb"
-import dotenv from "dotenv"
-import mongoose from "mongoose";
+// import app from "./server.js"
+// import mongodb from "mongodb"
+// import dotenv from "dotenv"
+// import mongoose from "mongoose";
 
-dotenv.config() 
-const MongoClient = mongodb.MongoClient
+// dotenv.config() 
+// const MongoClient = mongodb.MongoClient
 
-const port = process.env.PORT || 8000
+// const port = process.env.PORT || 8000
 
-MongoClient.connect(
-    process.env.DORMREVIEWS_DB_URI, 
-    {
-        poolSize: 50,
-        wtimeout: 2500,
-        useNewUrlParse: true }
+// MongoClient.connect(
+//     process.env.DORMREVIEWS_DB_URI, 
+//     {
+//         poolSize: 50,
+//         wtimeout: 2500,
+//         useNewUrlParse: true }
  
-)
-.catch(err => {
-    console.error(err.stack)
-    process.exit(1)
-})
-.then(async client => {
-    app.listen(port, () => {
-       console.log(`listening on port $`)
-    })
-})
+// )
+// .catch(err => {
+//     console.error(err.stack)
+//     process.exit(1)
+// })
+// .then(async client => {
+//     app.listen(port, () => {
+//        console.log(`listening on port $`)
+//     })
+// })

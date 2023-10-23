@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
   console.log('Route reached');
@@ -10,28 +10,26 @@ router.post('/', async (req, res) => {
 
     const existentUser = await User.findOne({ email });
 
-    if (!existentUser) {
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const user = await User.create({
-        firstName,
-        lastName,
-        email,
-        password: hashedPassword,
-        profilePicture,
-      });
-
-      await user.save();
-
-      console.log('New user created;', user);
-
-      return res.json({
-        success: true,
-        displayName: `${user.firstName} ${user.lastName}`,
+    if (existentUser) {
+      console.error('This email is already in use:', error);
+      return res.status(500).json({
+        error: 'Internal Server Error',
       });
     }
 
-    return res.status(400).json({
-      error: ('User already exists:', existentUser),
+    // Create the new user
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await User.create({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+    });
+    console.log('New user created:', newUser);
+
+    return res.json({
+      success: true,
+      displayName: `${newUser.firstName} ${newUser.lastName}`,
     });
   } catch (error) {
     console.error('Error creating user:', error);

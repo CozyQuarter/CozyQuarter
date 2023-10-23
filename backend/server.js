@@ -9,6 +9,8 @@ const checkUser = require('./api/checkUser');
 const createUser = require('./api/createUser');
 const app = express();
 const path = require("path");
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 
 
 
@@ -23,7 +25,7 @@ if (process.env.NODE_ENV != 'production') {
 }
 
 try {
-  mongoose.connect(process.env.MONGO_DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+  mongoose.connect(process.env.MONGO_DB_CONNECTION);
   const db = mongoose.connection;
 
   db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -32,9 +34,17 @@ try {
     console.log('Connected to MongoDB:', db.name);
     console.log('Connection details:', db.client.s.url);
   });
+  app.listen(port, () => {
+    console.log(`Listening on ${port}`)
+    // Perform a database connection when server starts
+  
+  });
+  
 } catch (error) {
   console.log(error);
 }
+
+
 
 app.use('/api/checkUser', checkUser);
 app.use('/api/createUser', createUser);
@@ -51,12 +61,6 @@ app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"));
-});
-
-app.listen(port, () => {
-  console.log(`Listening on ${port}`)
-  // Perform a database connection when server starts
-
 });
 
 // Create a new review
