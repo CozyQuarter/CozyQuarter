@@ -11,7 +11,6 @@ const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 
 
