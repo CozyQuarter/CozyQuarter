@@ -1,10 +1,11 @@
 // Signup.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
 
 const Signup = () => {
   const { signup } = useAuth();
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,6 +19,7 @@ const Signup = () => {
 
       if (response.ok) {
         console.log('User signed up successfully.');
+        navigate('/signin');
 
         // Check if the response includes an existing user (deleted)
         const data = await response.json();
@@ -28,8 +30,13 @@ const Signup = () => {
         console.error('Failed to sign up. Please try again.');
       }
     } catch (error) {
-      console.error('Error signing up:', error.message);
-      setError('Failed to sign up. Please try again.');
+      console.error('Error message is: ', error.message);
+      if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+        setError('Email is already in use. Try again');
+      } else {
+        setError('Failed to sign up. Please try again.');
+
+      }
     }
   };
 

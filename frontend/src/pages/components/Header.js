@@ -5,19 +5,21 @@ import { Link } from 'react-router-dom';
 import logo from "../../images/logo.png";
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
+import { useAuth } from '../../context/authContext';
 
 const Header = () => {
 
     const [visibleDropdown, setVisibleDropdown] = useState('');
+    const { currentUser } = useAuth();
 
     const handleMouseEnter = (label) => {
-      setVisibleDropdown(label);
+        setVisibleDropdown(label);
     }
-  
+
     const handleMouseLeave = () => {
-      setVisibleDropdown('');
+        setVisibleDropdown('');
     }
-    
+
     const menuItems = {
         freshman: [
             { label: 'BARH', link: '/freshman/barh' },
@@ -28,11 +30,11 @@ const Header = () => {
             { label: 'Davison', link: '/freshman/davison' },
             { label: 'Hall', link: '/freshman/hall' },
             { label: 'Nason', link: '/freshman/nason' },
-            { label: 'Nugent', link: '/freshman/nugent' },            
+            { label: 'Nugent', link: '/freshman/nugent' },
             { label: 'Sharp', link: '/freshman/sharp' },
             { label: 'Warren', link: '/freshman/warren' },
-        ],    
-  
+        ],
+
         sophomore: [
             { label: 'Blitman', link: '/sophomore/blitman' },
             { label: 'Bryckwyck', link: '/sophomore/bryckwyck' },
@@ -54,54 +56,65 @@ const Header = () => {
     return (
         <header style={{ position: 'relative' }}>
 
-            <div className = "container">
-                <Link to = "/Home/">
+            <div className="container">
+                <Link to="/Home/">
                     <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
                 </Link>
 
-                <Link to = "/AllDorms/">
+                <Link to="/AllDorms/">
                     <h3>All Dorms</h3>
                 </Link>
 
-                <div 
-                    onMouseEnter={() => handleMouseEnter('freshman')} 
+                <div
+                    onMouseEnter={() => handleMouseEnter('freshman')}
                     onMouseLeave={handleMouseLeave}
-                    style={{ position: 'relative' }} 
+                    style={{ position: 'relative' }}
                 >
                     <h3>Freshman</h3>
                     {visibleDropdown === 'freshman' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
-                        <DropdownMenu items={menuItems.freshman} />
+                            <DropdownMenu items={menuItems.freshman} />
                         </div>
                     )}
                 </div>
 
-                <div 
-                    onMouseEnter={() => handleMouseEnter('sophomore')} 
+                <div
+                    onMouseEnter={() => handleMouseEnter('sophomore')}
                     onMouseLeave={handleMouseLeave}
-                    style={{ position: 'relative' }} 
+                    style={{ position: 'relative' }}
                 >
                     <h3>Sophomore</h3>
                     {visibleDropdown === 'sophomore' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
-                        <DropdownMenu items={menuItems.sophomore} />
+                            <DropdownMenu items={menuItems.sophomore} />
                         </div>
                     )}
                 </div>
 
-                <div 
-                    onMouseEnter={() => handleMouseEnter('upperclass')} 
+                <div
+                    onMouseEnter={() => handleMouseEnter('upperclass')}
                     onMouseLeave={handleMouseLeave}
-                    style={{ position: 'relative' }} 
+                    style={{ position: 'relative' }}
                 >
                     <h3>Upperclass</h3>
                     {visibleDropdown === 'upperclass' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
-                        <DropdownMenu items={menuItems.upperclass} />
+                            <DropdownMenu items={menuItems.upperclass} />
                         </div>
                     )}
                 </div>
-                
+
+                {currentUser ? ( // If the user is signed in, show "Profile" button
+                    <Link to="/profile">
+                        <h3>Profile</h3>
+                    </Link>
+                ) : (
+                    // If the user is not signed in, show "Sign In" button
+                    <Link to="../auth/Signin">
+                        <h3>Sign In</h3>
+                    </Link>
+                )}
+
             </div>
         </header>
     )

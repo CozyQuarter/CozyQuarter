@@ -9,6 +9,7 @@ import LandingPage from './pages/components/auth/LandingPage/LandingPage';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import FAQ from "./pages/FAQ";
+import ProfilePage from './pages/components/auth/ProfilePage';
 
 // List of all dorms
 import AllDorms from "./pages/AllDorms"
@@ -49,6 +50,7 @@ function App() {
           {/* LandingPage, Signup, and Signin do not have Header and Footer */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<LandingPage />} />
 
           {/* Other pages have Header and Footer */}
