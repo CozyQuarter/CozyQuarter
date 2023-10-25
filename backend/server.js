@@ -39,9 +39,9 @@ try {
   app.listen(port, () => {
     console.log(`Listening on ${port}`)
     // Perform a database connection when server starts
-  
+
   });
-  
+
 } catch (error) {
   console.log(error);
 }

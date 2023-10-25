@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import './ReviewPage.css'
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
+import { useAuth } from '../../context/authContext';
 
 
 const OverallRating = styled(Rating)({
@@ -83,6 +84,8 @@ const ReviewPage = ({dorm_id}) => {
     if (dorm.triple_price < Infinity){
         triples = "$"+dorm.triple_price;
     }
+
+    const {currentUser} = useAuth;
 
     return (
         <div class = "body">
