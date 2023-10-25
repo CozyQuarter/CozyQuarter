@@ -10,6 +10,7 @@ const createUser = require('./api/createUser');
 const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const session = require('express-session');
 const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 
 
@@ -23,6 +24,7 @@ app.use(express.json());
 if (process.env.NODE_ENV != 'production') {
   require('dotenv').config()
 }
+
 
 try {
   mongoose.connect(process.env.MONGO_DB_CONNECTION);
@@ -54,6 +56,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+
 
 // Routes
 app.use(express.static(path.join(__dirname, "..", "frontend", "build")))
