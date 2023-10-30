@@ -1,1 +1,2 @@
-# CozyQuarterRPI
+# CozyQuarter
+CozyQuarter is a platform dedicated to enabling Rensselaer Polytechnic Institute (RPI) students to view and share feedback on dormitory accommodations. Drawing inspiration from platforms like "Rate My Professor", this hub invites former students to impart their first-hand experiences and even share relevant photos. It offers a comprehensive perspective on on-campus housing options for all students, especially freshmen, aiming to bridge the gap left by fragmented sources like Reddit discussions. Ultimately, CozyQuarter ensures that students have a centralized and efficient means to make informed housing decisions.
