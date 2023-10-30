@@ -4,6 +4,7 @@ import axios from 'axios';
 import { AuthContext } from '../../context/authContext';
 import ReviewPage from './ReviewPage';
 import { useParams } from 'react-router-dom';
+import './writeReview.css';
 
 
 const WriteReview = () => {
@@ -73,76 +74,75 @@ const WriteReview = () => {
 
 
     return (
-        <div>
+        <div className="writeReviewContainer">
             <h2>Write a Review</h2>
-            <div>
-                <h3>Building Rating</h3>
-                <Rating
-                    name="building-rating"
-                    value={buildingRating}
-                    precision={1}
-                    onChange={(event, newValue) => {
-                        setBuildingRating(newValue);
-                        calculateOverallRating();
-                    }}
-                />
-            </div>
+            <div className="review-section">
+            <h3>Building Rating</h3>
+            <Rating
+                name="building-rating"
+                value={buildingRating}
+                precision={1}
+                onChange={(event, newValue) => {
+                    setBuildingRating(newValue);
+                    calculateOverallRating();
+              }}
+            />
+        </div>
 
-            <div>
-                <h3>Room Rating</h3>
-                <Rating
-                    name="room-rating"
-                    value={roomRating}
-                    precision={1}
-                    onChange={(event, newValue) => {
-                        setRoomRating(newValue);
-                        calculateOverallRating();
-                    }}
-                />
-            </div>
+        <div className="review-section">
+            <h3>Room Rating</h3>
+            <Rating
+                name="room-rating"
+                value={roomRating}
+                precision={1}
+                onChange={(event, newValue) => {
+                    setRoomRating(newValue);
+                    calculateOverallRating();
+                }}
+            />
+        </div>
 
-            <div>
-                <h3>Location Rating</h3>
-                <Rating
-                    name="location-rating"
-                    value={locationRating}
-                    precision={1}
-                    onChange={(event, newValue) => {
-                        setLocationRating(newValue);
-                        calculateOverallRating();
-                    }}
-                />
-            </div>
+        <div className="review-section">
+            <h3>Location Rating</h3>
+            <Rating
+                name="location-rating"
+                value={locationRating}
+                precision={1}
+                onChange={(event, newValue) => {
+                    setLocationRating(newValue);
+                    calculateOverallRating();
+                }}
+            />
+        </div>
 
-            <div>
-                <h3>Cleanliness Rating</h3>
-                <Rating
-                    name="cleanliness-rating"
-                    value={cleanlinessRating}
-                    precision={1}
-                    onChange={(event, newValue) => {
-                        setCleanlinessRating(newValue);
-                        calculateOverallRating();
-                    }}
-                />
-            </div>
+        <div className="review-section">
+            <h3>Cleanliness Rating</h3>
+            <Rating
+                name="cleanliness-rating"
+                value={cleanlinessRating}
+                precision={1}
+                onChange={(event, newValue) => {
+                    setCleanlinessRating(newValue);
+                    calculateOverallRating();
+                }}
+            />
+        </div>
 
-            <div>
-                <h3>Overall Rating</h3>
-                <Rating name="overall-rating" value={overallRating} precision={0.1} readOnly />
-            </div>
+        <div className="review-section">
+            <h3>Overall Rating</h3>
+            <Rating name="overall-rating" value={overallRating} precision={0.1} readOnly />
+        </div>
 
-            <div>
-                <h3>Write Your Review</h3>
-                <textarea
-                    value={reviewText}
-                    onChange={(e) => setReviewText(e.target.value)}
-                    rows={4}
-                    cols={50}
-                />
-            </div>
-
-            <button onClick={handleReviewSubmit}>Submit Review</button>
+        <div className="review-section">
+            <h3>Write Your Review</h3>
+            <textarea
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            rows={4}
+            cols={50}
+            />
+        </div>
+            <button className="submit-button" onClick={handleReviewSubmit}>Submit Review</button>
         </div>
     );
 };
