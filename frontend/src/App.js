@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './pages/components/Header';
+import Header from './pages/components/Header/Header';
 import Footer from './pages/components/Footer';
 import Signup from './pages/components/auth/Signup';
 import Signin from './pages/components/auth/Signin';
+import WriteReview from './pages/components/writeReview';
+
 import Dashboard from './pages/components/auth/Dashboard';
 import LandingPage from './pages/components/auth/LandingPage/LandingPage';
 import Home from "./pages/Home";
@@ -51,6 +53,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/writeReview" element={<WriteReview />} />
+          <Route path="/writeReview/:dorm_id" element={<WriteReview />} />
+
           <Route path="/" element={<LandingPage />} />
 
           {/* Other pages have Header and Footer */}

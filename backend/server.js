@@ -7,6 +7,7 @@ const User = require('./models/User');
 const Review = require('./models/Review');
 const checkUser = require('./api/checkUser');
 const createUser = require('./api/createUser');
+const submitReview = require('./api/submitReview');
 const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -50,6 +51,7 @@ try {
 
 app.use('/api/checkUser', checkUser);
 app.use('/api/createUser', createUser);
+app.use('/api/submitReview', submitReview);
 
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {
@@ -67,33 +69,33 @@ app.get("*", (req, res) => {
 });
 
 // Create a new review
-app.post('/api/createReview', async (req, res) => {
-  const { dormId, userId, rating, comment } = req.body;
+// app.post('/api/createReview', async (req, res) => {
+//   const { dormId, userId, rating, comment } = req.body;
 
-  try {
-    const newReview = new Review({
-      dormId,
-      userId,
-      rating,
-      comment
-    });
+//   try {
+//     const newReview = new Review({
+//       dormId,
+//       userId,
+//       rating,
+//       comment
+//     });
 
-    await newReview.save();
-    console.log('New review saved:', newReview);
+//     await newReview.save();
+//     console.log('New review saved:', newReview);
 
-    return res.json({ success: true, message: 'Review created successfully!' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+//     return res.json({ success: true, message: 'Review created successfully!' });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 
-app.get('/api/getReviews', async (req, res) => {
-  try {
-    const reviews = await Review.find();
-    res.json(reviews);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+// app.get('/api/getReviews', async (req, res) => {
+//   try {
+//     const reviews = await Review.find();
+//     res.json(reviews);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });

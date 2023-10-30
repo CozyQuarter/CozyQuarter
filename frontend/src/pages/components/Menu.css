@@ -1,0 +1,59 @@
+/* Menu button styles */
+.menu-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .menu-icon {
+    display: block;
+    width: 30px;
+    height: 24px;
+    position: relative;
+  }
+  
+  .bar {
+    background: #333;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: 0.4s;
+  }
+  
+  .bar:nth-child(2) {
+    top: 10px;
+  }
+  
+  .bar:last-child {
+    top: 20px;
+  }
+  
+  /* Open menu styles */
+  .menu.open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .menu li:last-child {
+    border-bottom: none;
+  }
+  

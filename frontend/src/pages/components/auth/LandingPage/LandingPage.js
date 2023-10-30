@@ -64,6 +64,7 @@ const LandingPage = () => {
             {/* Email input */}
             <div className="input-container">
               <label htmlFor="email">Email:</label>
+
               <input
                 type="email"
                 id="email"
