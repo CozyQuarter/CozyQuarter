@@ -307,3 +307,9 @@ footer a {
   cursor: pointer; /* Change cursor when hovering over the button */
   border-radius: 4px; /* Add rounded corners */
 }
+
+
+/* List spacing */
+li:not(:last-child) {
+  margin-bottom: 5px;
+}

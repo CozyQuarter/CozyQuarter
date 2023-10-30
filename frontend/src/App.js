@@ -11,6 +11,7 @@ import LandingPage from './pages/components/auth/LandingPage/LandingPage';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import FAQ from "./pages/FAQ";
+import Rules from "./pages/Rules";
 import ProfilePage from './pages/components/auth/ProfilePage';
 
 // List of all dorms
@@ -177,6 +178,10 @@ function App() {
                     <Route
                       path="/FAQ/"
                       element={<FAQ />}
+                    />
+                    <Route
+                      path = "/Rules/"
+                      element = {<Rules />}
                     />
                     {/* Redirect any unknown route to LandingPage */}
                     <Route path="*" element={<Navigate to="/" replace />} />

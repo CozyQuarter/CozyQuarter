@@ -18,6 +18,13 @@ const Footer = () => {
                     <h3> Resources/FAQ </h3>
                 </Link>
 
+                <Link to = "/Rules/"
+                onClick={() => {
+                    window.scroll(0, 0);
+                  }}>
+                    <h3> Rules </h3>
+                </Link>
+
                 <Link to = "/AboutUs/"
                 onClick={() => {
                     window.scroll(0, 0);

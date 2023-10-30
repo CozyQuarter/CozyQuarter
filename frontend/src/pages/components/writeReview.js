@@ -3,7 +3,7 @@ import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { AuthContext } from '../../context/authContext';
 import ReviewPage from './ReviewPage';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 
 const WriteReview = () => {
@@ -75,6 +75,9 @@ const WriteReview = () => {
     return (
         <div>
             <h2>Write a Review</h2>
+            <p> Before writing a review, make sure to follow the guidelines
+                listed on the <Link to = "/Rules/"> Rules Page</Link>.
+            </p>
             <div>
                 <h3>Building Rating</h3>
                 <Rating
