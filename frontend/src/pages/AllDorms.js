@@ -16,7 +16,7 @@ const AllDorms = () => {
         fontSize: "1em",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
         fontFamily: "Poppins",
         marginBottom: "20px"
     };
@@ -182,9 +182,66 @@ const AllDorms = () => {
                 </select>
 
             </form>
+            {/* List of dorms */}
+            <div style={margin}>     
+                <table style={{ width:'100%', paddingTop: '15px'}}>
+                    
+                    <tbody>
+                        
+                        {state.list.map((dorm) => {
+                            const dorm_link = "/" + dorm.folder.toLowerCase() + "/" + dorm.id.toLowerCase();
 
-            <ul>
-                {/* List of dorms */}
+                            let singles = "-";
+                            if (dorm.single_price < Infinity) {
+                                singles = "$" + dorm.single_price;
+                            }
+                            let doubles = "-";
+                            if (dorm.double_price < Infinity) {
+                                doubles = "$" + dorm.double_price;
+                            }
+                            let triples = "-";
+                            if (dorm.triple_price < Infinity) {
+                                triples = "$" + dorm.triple_price;
+                            }
+
+                            return (
+                                <tr key={dorm.id} style={box}>
+                                    <td style={{width:'22%'}}>
+                                        <Link to={dorm_link} onClick={() => { window.scroll(0, 0); }} className="custom-heading2">
+                                            <b>{dorm.name}</b>
+                                        </Link>
+                                    </td>
+                                    <td style={{ width: '22%' }}>
+                                        <b>Year: </b>{dorm.year}
+                                    </td>
+                                    <td style={{ width: '22%' }}>
+                                        <b>Room Type: </b>{dorm.room_type}
+                                    </td>
+                                    <td style={{width:'34%'}}>
+                                        <table style={{ width: '100%' }}>
+                                            <tr>
+                                                <td style={{width:'33%'}}>
+                                                    <b>Single:</b> {singles}
+                                                </td>
+                                                <td style={{ width: '33%' }}>
+                                                    <b>Double:</b> {doubles}
+                                                </td>
+                                                <td style={{ width: '33%' }}>
+                                                    <b>Triple:</b> {triples}
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+            
+            {/* <ul>
+               
                 {(
                     state.list.map(dorm => {
 
@@ -216,7 +273,9 @@ const AllDorms = () => {
                         </div>
                     })
                 )}
-            </ul>
+            </ul> */}
+
+            
 
         </div>
     )
