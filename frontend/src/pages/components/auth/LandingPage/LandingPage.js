@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import logo from '../../../../images/logo.png';
+import dorm from '../../../../images/dorm.jpg';
 import { useAuth } from '../../../../context/authContext';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -53,6 +54,7 @@ const LandingPage = () => {
         <img src={logo} alt="CozyQuarter Logo" />
         {/* Company name */}
         {/* <h1>CozyQuarter</h1> */}
+        <img src={dorm} alt="Clipart of dorm" />
       </div>
 
       <div className="signin-container">
@@ -109,6 +111,7 @@ const LandingPage = () => {
         </Link>
 
         {/* Continue as Guest */}
+        <p></p>
         <Link to="/home" className="guest-link"> {/* Adjust the route accordingly */}
           Continue as Guest
         </Link>

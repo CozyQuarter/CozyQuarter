@@ -33,7 +33,8 @@ const Rules = () => {
                 <li><b>No Inappropriate Content:</b> Do not post reviews that include
                     explicit or adult content, including text, images, or links.</li>
                 <li><b>No False Information:</b> Reviews should be factually accurate and not contain false
-                    information, including exaggerated claims, rumors, or misleading statements about a dorm.</li>
+                    information, including exaggerated claims, rumors, or misleading statements about a dorm.
+                    Do not post a review for a dorm unless you have lived in it.</li>
                 <li><b>No Promotional or Spam Content:</b> Reviews should not be used for promotional purposes.
                     Do not post spam, advertisements, or self-promotion.</li>
                 <li><b>No Plagiarism:</b> Reviews should be your own original content. Do not copy and paste

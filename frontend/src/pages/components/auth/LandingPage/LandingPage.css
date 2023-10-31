@@ -1,8 +1,7 @@
 .landing-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100vh;
   position: relative;
 
@@ -22,19 +21,22 @@
 }
 
 .signin-message {
-  font-family: 'Arial', Arial, Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 1em;
+  color: #ea5455;
+  text-decoration: bold;
 }
 
 .logo-container {
   text-align: center;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .logo-container img {
-  width: 300px;
+  width: 55%;
+  height: auto;
   /* Adjust the size as needed */
-  height: 80px;
+  /*height: 80px;*/
 }
 
 .signin-container {
@@ -61,6 +63,7 @@
 
 .input-container input[type="email"] {
   width: 150%;
+  font-size: 1em;
   /* Make it take up the entire width */
   padding: 10px;
   border: 2px solid red;
@@ -70,29 +73,50 @@
   /* Remove the default input outline */
 }
 
-.next-button {
+.input-container input[type="password"] {
   width: 150%;
+  font-size: 1em;
+  /* Make it take up the entire width */
   padding: 10px;
-  background-color: #f30000;
+  border: 2px solid red;
+  /* Add a red border */
+  border-radius: 4px;
+  outline: none;
+  /* Remove the default input outline */
+}
+
+
+.next-button {
+  width: 161%;
+  padding: 10px;
+  font-size: 1em;
+  background-color: red;
   /* Adjust the color as needed */
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .signup-message {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 1em;
 }
 
 .signup-button {
-  width: 150%;
+  width: 161%;
   padding: 10px;
-  background-color: #f30000;
+  font-size: 1em;
+  background-color: red;
   /* Adjust the color as needed */
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.guest-link {
+  margin-top: 10px;
+  font-size: 1em;
 }
