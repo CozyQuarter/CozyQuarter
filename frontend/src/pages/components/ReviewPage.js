@@ -143,7 +143,10 @@ const ReviewPage = ({ dorm_id }) => {
             </Link>
           ) : (
             // If the user is signed in, show "Write a Review" button
-            <Link to={`/writeReview/${dorm_id}`} className="write-review-button">
+            <Link to={`/writeReview/${dorm_id}`} className="write-review-button"
+            onClick={() => {
+              window.scroll(0, 0);
+            }}>
               Write a Review
             </Link>
 

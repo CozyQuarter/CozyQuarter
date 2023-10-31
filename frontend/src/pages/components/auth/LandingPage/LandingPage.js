@@ -52,9 +52,10 @@ const LandingPage = () => {
     <div className="landing-container">
       <div className="logo-container">
         <img src={logo} alt="CozyQuarter Logo" />
+        <img src={dorm} alt="Clipart of dorm" />
         {/* Company name */}
         {/* <h1>CozyQuarter</h1> */}
-        <img src={dorm} alt="Clipart of dorm" />
+        
       </div>
 
       <div className="signin-container">
@@ -96,9 +97,9 @@ const LandingPage = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
         {/* Next button */}
-        <button className="next-button" onClick={handleNext}>
+        <div className="next-button" onClick={handleNext}>
           {step === 1 ? 'Next' : 'Sign In'}
-        </button>
+        </div>
 
         {/* Sign up message and button */}
         {step === 1 ? (
@@ -107,7 +108,7 @@ const LandingPage = () => {
           <p className="signup-message">Not your account?</p>
         )}
         <Link to="/signup">
-          <button className="signup-button">Sign Up</button>
+          <div className="signup-button">Sign Up</div>
         </Link>
 
         {/* Continue as Guest */}

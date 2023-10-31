@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; // Import these functions
+import './LandingPage/LandingPage.css';
+import logo from '../../../images/logo.png';
+import dorm from '../../../images/dorm.jpg';
 
 const Signin = () => {
   const { currentUser } = useAuth();
@@ -24,32 +27,50 @@ const Signin = () => {
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSignin}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          ref={emailRef}
-          required
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          ref={passwordRef}
-          required
-        />
-        <button type="submit">Sign In</button>
-      </form>
-      <p>
-        Don't have an account? <Link to="/signup">Sign up here</Link>.
-      </p>
-      <p>
-        <Link to="/dashboard">Continue as Guest</Link>
-      </p>
+    <div className="landing-container">
+
+      <div className="logo-container">
+        <img src={logo} alt="CozyQuarter Logo" />
+        {/* Company name */}
+        {/* <h1>CozyQuarter</h1> */}
+        <img src={dorm} alt="Clipart of dorm" />
+      </div>
+
+      <div className="signin-container">
+        <div className="signin-message">
+          <h2>Sign In</h2>
+        </div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <form onSubmit={handleSignin}>
+          <div className="input-container">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              ref={emailRef}
+              required
+            />
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              ref={passwordRef}
+              required
+            />
+          </div>
+
+          <button type="submit" className="signup-button">Sign In</button>
+        </form>
+        <p>
+          Don't have an account? <Link to="/signup">Sign up here</Link>.
+        </p>
+        <p>
+          <Link to="/home">Continue as Guest</Link>
+        </p>
+      </div>
     </div>
   );
 };

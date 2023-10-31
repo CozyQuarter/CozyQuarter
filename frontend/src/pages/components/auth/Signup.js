@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
+import './LandingPage/LandingPage.css';
+import logo from '../../../images/logo.png';
+import dorm from '../../../images/dorm.jpg';
 
 const Signup = () => {
   const { signup } = useAuth();
@@ -42,45 +45,68 @@ const Signup = () => {
 
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <label htmlFor="firstName">First Name:</label>
-      <input
-        type="text"
-        id="firstName"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-        required
-      />
-      <label htmlFor="lastName">Last Name:</label>
-      <input
-        type="text"
-        id="lastName"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-        required
-      />
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button onClick={handleSignup}>Sign Up</button>
-      <p>
-        Already have an account? <Link to="/signin">Sign in here</Link>.
-      </p>
+    <div className="landing-container">
+      <div className="logo-container">
+        <img src={logo} alt="CozyQuarter Logo" />
+        {/* Company name */}
+        {/* <h1>CozyQuarter</h1> */}
+        <img src={dorm} alt="Clipart of dorm" />
+      </div>
+      
+      <div className="signin-container">
+        <div className="signin-message"><h2>Sign Up</h2></div>
+        
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        <div className="input-container">
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="input-container">
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="input-container">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="input-container">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button onClick={handleSignup} className="signup-button">Sign Up</button>
+        <p>
+          Already have an account? <Link to="/signin">Sign in here</Link>.
+        </p>
+      </div>
     </div>
   );
 };
