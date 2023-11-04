@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
     const existentUser = await User.findOne({ email });
 
     if (existentUser) {
+      User.delete
       console.error('This email is already in use:', error);
       return res.status(500).json({
         error: 'Internal Server Error',

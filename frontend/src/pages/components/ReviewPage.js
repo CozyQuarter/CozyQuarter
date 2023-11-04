@@ -6,12 +6,14 @@
 // In the images folder, as a .png file
 // named [Dorm].png, capitalized (in the exact same format as the dorm class name)
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ReviewPage.css'
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import { useAuth } from '../../context/authContext';
+import Review from './Review';
+
 
 
 const OverallRating = styled(Rating)({
@@ -31,6 +33,7 @@ const SubRating = styled(Rating)({
     color: '#ff3d47',
   },
 });
+
 
 const dorms = [
 
@@ -62,7 +65,33 @@ const dorms = [
 ];
 
 const ReviewPage = ({ dorm_id }) => {
+  const [reviews, setReviews] = useState([]);
+  const { currentUser } = useAuth();
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://localhost:8000/api/getReviews/${dorm_id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch reviews');
+        }
+
+        const data = await response.json();
+        setReviews(data.reviews);
+      } catch (error) {
+        const response = await fetch(`/api/getReviews/${dorm_id}`);
+
+        console.error('Error fetching reviews:', error);
+        console.error('Response status:', response.status);
+        console.error('Response headers:', response.headers);
+        const data = await response.json();
+        console.error('Response data:', data);
+      }
+    };
+
+    fetchData();
+  }, [dorm_id]);
 
   let img_path = dorm_id + ".png";
   console.log('DORM ID IS: ', dorm_id);
@@ -74,20 +103,11 @@ const ReviewPage = ({ dorm_id }) => {
 
 
   // Format single, double, triple rooms
-  let singles = "-";
-  if (dorm.single_price < Infinity) {
-    singles = "$" + dorm.single_price;
-  }
-  let doubles = "-";
-  if (dorm.double_price < Infinity) {
-    doubles = "$" + dorm.double_price;
-  }
-  let triples = "-";
-  if (dorm.triple_price < Infinity) {
-    triples = "$" + dorm.triple_price;
-  }
 
-  const { currentUser } = useAuth();
+  const singles = dorm.single_price < Infinity ? `$${dorm.single_price}` : '-';
+  const doubles = dorm.double_price < Infinity ? `$${dorm.double_price}` : '-';
+  const triples = dorm.triple_price < Infinity ? `$${dorm.triple_price}` : '-';
+
 
   return (
     <div class="body">
@@ -130,7 +150,6 @@ const ReviewPage = ({ dorm_id }) => {
       {/* Browse Reviews and Write Review button */}
       <div class="panels">
         <div class="left-panel">
-
           <div class="custom-heading3">
             <b>Browse Reviews</b>
           </div>
@@ -155,6 +174,10 @@ const ReviewPage = ({ dorm_id }) => {
 
       <div class="left-panel">
         Reviews go here
+        {reviews.map((review, index) => (
+          <Review key={index} reviewData={review} />
+        ))}
+
       </div>
     </div>
 

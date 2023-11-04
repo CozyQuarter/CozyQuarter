@@ -8,6 +8,7 @@ const Review = require('./models/Review');
 const checkUser = require('./api/checkUser');
 const createUser = require('./api/createUser');
 const submitReview = require('./api/submitReview');
+const getReviews = require('./api/getReviews');
 const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -52,6 +53,8 @@ try {
 app.use('/api/checkUser', checkUser);
 app.use('/api/createUser', createUser);
 app.use('/api/submitReview', submitReview);
+app.use('/api/getReviews', getReviews);
+
 
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {

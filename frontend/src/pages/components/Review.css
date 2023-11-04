@@ -1,7 +1,8 @@
 /* Overall Structure */
 .review-component {
     display: flex;
-    flex-direction: row;  /* Set the main axis as row to position elements from left to right */
+    flex-direction: row;
+    /* Set the main axis as row to position elements from left to right */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -11,8 +12,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 20px; /* Add some spacing between Overall and the review content */
-    position: relative; /* To position the box behind the rating */
+    margin-right: 20px;
+    /* Add some spacing between Overall and the review content */
+    position: relative;
+    /* To position the box behind the rating */
 }
 
 /* Overall Text */
@@ -27,29 +30,36 @@
     font-size: 80px;
     z-index: 1;
     font-weight: bold;
-    position: relative; /* Relative position for stacking elements */
-    padding: 20px 25px; /* Space around the rating value inside the box */
-    border-radius:10px;
+    position: relative;
+    /* Relative position for stacking elements */
+    padding: 20px 25px;
+    /* Space around the rating value inside the box */
+    border-radius: 10px;
 }
 
 /* Combining review content and review details into a single column on the right */
 .review-content-container {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Allow it to take remaining space */
+    flex: 1;
+    /* Allow it to take remaining space */
 }
 
 .review-content {
-    margin-bottom: 10px;  /* Add some spacing between the review content and the details */
+    margin-bottom: 10px;
+    /* Add some spacing between the review content and the details */
 }
 
 .review-details {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* This will ensure two columns for the ratings */
+    justify-content: space-between;
+    /* This will ensure two columns for the ratings */
 }
+
 .review-component {
-    position: relative; /* To allow positioning of date */
+    position: relative;
+    /* To allow positioning of date */
     /* ... other styles ... */
 }
 
@@ -63,29 +73,38 @@
 
 /* Category Rating Structure */
 .category-rating {
-    width: 45%; /* To allow two ratings side by side */
-    display: flex; /* This will ensure inline structure */
-    align-items: center; /* Vertically centers the stars with the text */
+    width: 45%;
+    /* To allow two ratings side by side */
+    display: flex;
+    /* This will ensure inline structure */
+    align-items: center;
+    /* Vertically centers the stars with the text */
 }
 
 .stars {
-    display: flex; /* To display star spans in a row */
-    margin-left: 10px; /* Adds a little space between the category name and the stars */
+    display: flex;
+    /* To display star spans in a row */
+    margin-left: 10px;
+    /* Adds a little space between the category name and the stars */
     font-size: 1.5em;
-    color: #ccc; /* Default color for uncolored stars */
+    color: #ccc;
+    /* Default color for uncolored stars */
     cursor: pointer;
 }
 
 .star {
-    margin-left: 3px; /* Optional: To give a little space between stars */
+    margin-left: 3px;
+    /* Optional: To give a little space between stars */
 }
 
 .star.active {
-    color: #ffac00; /* Color for active (colored) stars */
+    color: #ffac00;
+    /* Color for active (colored) stars */
 }
 
 .star.inactive {
-    color: #e0e0e0; /* Color for inactive (uncolored) stars */
+    color: #e0e0e0;
+    /* Color for inactive (uncolored) stars */
 }
 
 /* Colors Based on Rating Value */
