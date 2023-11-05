@@ -29,12 +29,12 @@ const Review = ({ reviewData }) => {
     ];
   
     const handleReport = () => {
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      emailjs.send('service_fejaqky', 'template_non52vq', {
         to_name: 'Cozy Quarter',
         from_name: 'Review Reporting System',
         message: `Review with ID: ${reviewData.id} has been reported for the following reasons: ${selectedReasons.join(', ')}. Additional details: ${details}`,
         to_email: 'cozyquarterco@gmail.com',
-      }, 'YOUR_USER_ID')
+      }, 'eVMVEPjKWovC9tqCP')
       .then((response) => {
          console.log('SUCCESS!', response.status, response.text);
       }, (err) => {
