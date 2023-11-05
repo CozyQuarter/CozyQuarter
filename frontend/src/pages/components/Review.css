@@ -36,6 +36,11 @@
     /* Space around the rating value inside the box */
     border-radius: 10px;
 }
+.MuiRating-root {
+    font-size: 24px;
+    color: #000;
+}
+
 
 /* Combining review content and review details into a single column on the right */
 .review-content-container {
@@ -98,7 +103,7 @@
 }
 
 .star.active {
-    color: #ffac00;
+    color: #000;
     /* Color for active (colored) stars */
 }
 

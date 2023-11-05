@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { AuthContext } from '../../context/authContext';
@@ -20,15 +20,38 @@ const WriteReview = () => {
 
     const authContext = useContext(AuthContext);
 
-    // Calculate overallRating based on other ratings
-    const calculateOverallRating = () => {
-        // You can calculate the overall rating based on the ratings of different sections.
-        // For example, you can take an average of all ratings.
-        const averageRating = ((buildingRating + roomRating + locationRating + cleanlinessRating) / 4);
+      // Calculate overallRating based on other ratings with proper precision
+      const calculateOverallRating = () => {
+        const ratings = [buildingRating, roomRating, locationRating, cleanlinessRating];
+        const precision = 0.1; // Set your desired precision
+
+        // Debug prints for individual ratings
+        console.log('Building Rating:', buildingRating);
+        console.log('Room Rating:', roomRating);
+        console.log('Location Rating:', locationRating);
+        console.log('Cleanliness Rating:', cleanlinessRating);
+
+        // Calculate overall rating based on individual ratings and precision
+        const sum = ratings.reduce((acc, rating) => {
+            const roundedRating = Math.round(rating / precision) * precision;
+            console.log('Rounded Rating:', roundedRating);
+            return acc + roundedRating;
+        }, 0);
+
+        const averageRating = sum / ratings.length;
+        console.log('Overall Rating:', averageRating);
+
         setOverallRating(averageRating);
-    };
+    }; 
+    // Use useEffect to recalculate overallRating whenever cleanlinessRating changes
+    useEffect(() => {
+        calculateOverallRating();
+    }, [cleanlinessRating]);
+
 
     const handleReviewSubmit = () => {
+        calculateOverallRating();
+
         const { currentUser } = authContext;
         // Ensure currentUser is available
         if (currentUser) {
@@ -84,7 +107,7 @@ const WriteReview = () => {
             <Rating
                 name="building-rating"
                 value={buildingRating}
-                precision={1}
+                precision={0.1}
                 onChange={(event, newValue) => {
                     setBuildingRating(newValue);
                     calculateOverallRating();
@@ -97,7 +120,7 @@ const WriteReview = () => {
             <Rating
                 name="room-rating"
                 value={roomRating}
-                precision={1}
+                precision={0.1}
                 onChange={(event, newValue) => {
                     setRoomRating(newValue);
                     calculateOverallRating();
@@ -110,7 +133,7 @@ const WriteReview = () => {
             <Rating
                 name="location-rating"
                 value={locationRating}
-                precision={1}
+                precision={0.1}
                 onChange={(event, newValue) => {
                     setLocationRating(newValue);
                     calculateOverallRating();
@@ -123,7 +146,7 @@ const WriteReview = () => {
             <Rating
                 name="cleanliness-rating"
                 value={cleanlinessRating}
-                precision={1}
+                precision={0.1}
                 onChange={(event, newValue) => {
                     setCleanlinessRating(newValue);
                     calculateOverallRating();
@@ -133,7 +156,8 @@ const WriteReview = () => {
 
         <div className="review-section">
             <h3>Overall Rating</h3>
-            <Rating name="overall-rating" value={overallRating} precision={0.1} readOnly />
+            
+            <Rating name="overall-rating" value={overallRating} precision={1} readOnly />
         </div>
 
         <div className="review-section">
