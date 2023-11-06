@@ -140,38 +140,40 @@ const Review = ({ reviewData, hideReportButton  }) => {
                 </div>
             </div>
             {hideReportButton ? null : (
-                <Button className="report-button" onClick={() => setModalOpen(true)}>
-                    Report
-                </Button>
+                <button className="report-button" onClick={() => setModalOpen(true)}>REPORT</button>
             )}           
             {modalOpen && (
                 <div className="modal">
-                    <h2>Report Review</h2>
-                    {reasons.map(reason => (
-                        <div key={reason}>
-                            <input
-                                type="checkbox"
-                                name="reason"
-                                value={reason}
-                                checked={selectedReasons.includes(reason)}
-                                onChange={e => {
-                                    if (e.target.checked) {
-                                        setSelectedReasons(prevReasons => [...prevReasons, reason]);
-                                    } else {
-                                        setSelectedReasons(prevReasons => prevReasons.filter(r => r !== reason));
-                                    }
-                                }}
-                            />
-                            <label>{reason}</label>
+                    <div className="modal-content">
+                        <h2>Report Review</h2>
+                        {reasons.map(reason => (
+                            <div key={reason}>
+                                <input
+                                    type="checkbox"
+                                    name="reason"
+                                    value={reason}
+                                    checked={selectedReasons.includes(reason)}
+                                    onChange={e => {
+                                        if (e.target.checked) {
+                                            setSelectedReasons(prevReasons => [...prevReasons, reason]);
+                                        } else {
+                                            setSelectedReasons(prevReasons => prevReasons.filter(r => r !== reason));
+                                        }
+                                    }}
+                                />
+                                <label>{reason}</label>
+                            </div>
+                        ))}
+                        <textarea
+                            placeholder="Additional details (optional)"
+                            value={details}
+                            onChange={e => setDetails(e.target.value)}
+                        />
+                        <div className="button-group">
+                            <button className="submit-cancel-button" onClick={handleReport}>Submit</button>
+                            <button className="submit-cancel-button" onClick={() => setModalOpen(false)}>Cancel</button>
                         </div>
-                    ))}
-                    <textarea
-                        placeholder="Additional details (optional)"
-                        value={details}
-                        onChange={e => setDetails(e.target.value)}
-                    />
-                    <button onClick={handleReport}>Submit</button>
-                    <button onClick={() => setModalOpen(false)}>Cancel</button>
+                    </div>
                 </div>
             )}
         </div>
