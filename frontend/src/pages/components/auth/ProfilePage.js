@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../../context/authContext';
 import { useNavigate } from 'react-router-dom';
+import Review from '../Review';
+import './ProfilePage.css'; // Import your CSS file
 
 const ProfilePage = () => {
     const { currentUser, logout } = useAuth();
@@ -20,7 +22,7 @@ const ProfilePage = () => {
         // Fetch user-specific reviews
         const fetchUserReviews = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/getUserReviews', {
+                const response = await fetch(`http://localhost:8000/api/getUserReviews/${currentUser.email}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -31,6 +33,8 @@ const ProfilePage = () => {
                     const reviews = await response.json();
                     setUserReviews(reviews);
                 } else {
+                    console.log(currentUser.email);
+                    console.log(currentUser.displayName);
                     console.error('Failed to fetch user reviews.');
                 }
             } catch (error) {
@@ -44,23 +48,24 @@ const ProfilePage = () => {
     }, [currentUser]);
 
     return (
-        <div>
-            <h2>Profile Page</h2>
+        <div className="profile-container">
             {currentUser ? (
-                <div>
-                    <h3>Welcome, {currentUser.displayName}!</h3>
-                    <p>Email: {currentUser.email}</p>
+                <div className="profile-content">
+                    <div className="profile-header">
+                        <h2>Welcome, {currentUser.displayName}!</h2>
+                        <p>Email: {currentUser.email}</p>
+                    </div>
+                    <div className="profile-picture">
+                        {/* Add profile picture here */}
+                        <img src="your-profile-picture-url.jpg" alt="Profile" />
+                    </div>
                     <h3>Your Reviews:</h3>
-                    <ul>
+                    <div className="user-reviews">
                         {userReviews.map((review) => (
-                            <li key={review._id}>
-                                <p>Review for {review.dormName}</p>
-                                <p>Rating: {review.rating}</p>
-                                <p>Comment: {review.comment}</p>
-                            </li>
+                            <Review key={review._id} reviewData={review}  hideReportButton />
                         ))}
-                    </ul>
-                    <button onClick={handleLogout}>Logout</button>
+                    </div>
+                    <button className="logout-button" onClick={handleLogout}>Logout</button>
                 </div>
             ) : (
                 <p>Please sign in to view your profile.</p>

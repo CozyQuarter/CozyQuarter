@@ -1,0 +1,37 @@
+.profile-container {
+    background-color: #ffffff; /* Red background color */
+    color: #000000; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+.user-reviews {
+    margin: 20px 0;
+}
+
+.logout-button {
+    background-color: #FF0000; /* Red button background color */
+    color: #FFFFFF; /* White button text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #FF3333; /* Lighter red on hover */
+}

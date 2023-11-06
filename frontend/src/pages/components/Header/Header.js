@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import logo from "../../../images/logo.png";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DropdownMenu from '../DropdownMenu';
 import { useAuth } from '../../../context/authContext';
-// import './Header.css';
+import MobileMenu from './MobileMenu';
+import './Header.css';
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,23 +13,26 @@ const Header = () => {
     const [visibleDropdown, setVisibleDropdown] = useState('');
     const { currentUser } = useAuth();
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [showMobileMenuOverlay, setShowMobileMenuOverlay] = useState(false);
 
-    const toggleMenu = (selectedMenu) => {
-        if (menuSelection === selectedMenu) {
-            setMenuSelection(null);
-        } else {
-            setMenuSelection(selectedMenu);
-        }
-        setMenuOpen(!isMenuOpen);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+          // Adjust the breakpoint and show/hide the overlay accordingly
+          setShowMobileMenuOverlay(window.innerWidth <= mobileMenuBreakpoint);
+        };
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
-    const handleMouseEnter = (label) => {
-        setVisibleDropdown(label);
-    }
+       // Define a breakpoint for showing/hiding the mobile menu
+  const mobileMenuBreakpoint = 990; // Adjust as needed
 
-    const handleMouseLeave = () => {
-        setVisibleDropdown('');
-    }
+   
 
     const menuItems = {
         freshman: [
@@ -62,69 +66,58 @@ const Header = () => {
             { label: 'Polytechnic', link: '/upperclass/polytechnic' },
         ],
     };
+     // Function to generate menu items from your existing menu structure
+    const generateMenuItems = (menuStructure) => {
+        const items = [];
+        for (const key in menuStructure) {
+          if (Object.hasOwnProperty.call(menuStructure, key)) {
+            const subMenu = menuStructure[key];
+            items.push({
+              label: key,
+              subMenu: subMenu,
+            });
+          }
+        }
+        return items;
+      };
+    
+      const allMenuItems = generateMenuItems(menuItems); 
+
+    const toggleMenu = (selectedMenu) => {
+        if (menuSelection === selectedMenu) {
+            setMenuSelection(null);
+        } else {
+            setMenuSelection(selectedMenu);
+        }
+        setMenuOpen(!isMenuOpen);
+    };
+
+    const handleMouseEnter = (label) => {
+        setVisibleDropdown(label);
+    }
+
+    const handleMouseLeave = () => {
+        setVisibleDropdown('');
+    }
 
     return (
         <header style={{ position: 'relative' }}>
-
             <div className="container">
-                <div className="menu-button" onClick={toggleMenu}>
-                    <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`}>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
+                {windowWidth <= mobileMenuBreakpoint && (
+                    // Show mobile menu if screen size is small
+                    <div className="mobile-menu-button" onClick={() => setMenuOpen(!isMenuOpen)}>
+                        <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`}>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                        </div>
                     </div>
-                </div>
-                <Link to="/Home/">
-                    <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
-                </Link>
-                {isMenuOpen ? (
-                    <div className="menu">
-                        <ul>
-                            <li>
-                                <Link to="/AllDorms">All Dorms</Link>
-                            </li>
-                            <li>
-                                <span onClick={() => toggleMenu('freshman')}>Freshman</span>
-                                {menuSelection === 'freshman' && (
-                                    <ul>
-                                        {menuItems.freshman.map((item) => (
-                                            <li key={item.label}>
-                                                <Link to={item.link}>{item.label}</Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </li>
-                            <li>
-                                <span onClick={() => toggleMenu('sophomore')}>Sophomore</span>
-                                {menuSelection === 'sophomore' && (
-                                    <ul>
-                                        {menuItems.sophomore.map((item) => (
-                                            <li key={item.label}>
-                                                <Link to={item.link}>{item.label}</Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </li>
-                            <li>
-                                <span onClick={() => toggleMenu('upperclass')}>Upperclass</span>
-                                {menuSelection === 'upperclass' && (
-                                    <ul>
-                                        {menuItems.upperclass.map((item) => (
-                                            <li key={item.label}>
-                                                <Link to={item.link}>{item.label}</Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </li>
-                            <li>
-                                <Link to="/profile">Profile</Link>
-                            </li>
-                        </ul>
-                    </div>
-                ) : null}
+                )}
+
+      
+      <Link to="/Home/">
+          <img src={logo} alt="Cozy Quarter Logo" width={400}></img>
+        </Link>
                 <Link to="/AllDorms/">
                     <h3>All Dorms</h3>
                 </Link>

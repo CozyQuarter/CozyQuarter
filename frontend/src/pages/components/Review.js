@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 import { Box, Typography, Paper, Rating, Button } from '@mui/material';
 import './Review.css';
 
-const Review = ({ reviewData }) => {
+const Review = ({ reviewData, hideReportButton  }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedReasons, setSelectedReasons] = useState([]);
     const [details, setDetails] = useState('');
@@ -35,6 +35,18 @@ const Review = ({ reviewData }) => {
         setSelectedReasons([]);
         setDetails('');
     };
+        // Conditional rendering for the report button
+        const renderReportButton = () => {
+            if (hideReportButton) {
+                return null; // Don't render the report button
+            }
+    
+            return (
+                <Button className="report-button" onClick={() => setModalOpen(true)}>
+                    Report
+                </Button>
+            );
+        };
     const getOverallRatingBoxColor = (rating) => {
       if (rating > 0 && rating < 3) {
           return 'red';
@@ -45,6 +57,7 @@ const Review = ({ reviewData }) => {
       }
       return 'transparent'; // Default color
   };
+
 
   const ratingBoxStyle = {
       backgroundColor: getOverallRatingBoxColor(reviewData.overallRating),
@@ -126,7 +139,11 @@ const Review = ({ reviewData }) => {
                     </div>
                 </div>
             </div>
-            <Button className="report-button" onClick={() => setModalOpen(true)}>Report</Button>
+            {hideReportButton ? null : (
+                <Button className="report-button" onClick={() => setModalOpen(true)}>
+                    Report
+                </Button>
+            )}           
             {modalOpen && (
                 <div className="modal">
                     <h2>Report Review</h2>
