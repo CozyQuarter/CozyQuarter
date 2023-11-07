@@ -20,8 +20,8 @@ const WriteReview = () => {
 
     const authContext = useContext(AuthContext);
 
-      // Calculate overallRating based on other ratings with proper precision
-      const calculateOverallRating = () => {
+    // Calculate overallRating based on other ratings with proper precision
+    const calculateOverallRating = () => {
         const ratings = [buildingRating, roomRating, locationRating, cleanlinessRating];
         const precision = 0.1; // Set your desired precision
 
@@ -42,7 +42,7 @@ const WriteReview = () => {
         console.log('Overall Rating:', averageRating);
 
         setOverallRating(averageRating);
-    }; 
+    };
     // Use useEffect to recalculate overallRating whenever cleanlinessRating changes
     useEffect(() => {
         calculateOverallRating();
@@ -66,10 +66,17 @@ const WriteReview = () => {
                 dorm_id: dorm_id, // Assuming you send the dorm ID from the front-end
                 email: currentUser.email, // Add the user's email
 
-            };
+            }
+
+
+            // Determine the API URL based on the environment
+            const apiUrl = process.env.NODE_ENV === 'production'
+                ? 'https://cozyquarter-9251ad96e93b.herokuapp.com/api/submitReview'
+                : 'http://localhost:8000/api/submitReview';
 
             // Send a POST request to your API to create the review using fetch
-            fetch('http://localhost:8000/api/submitReview', {
+
+            fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,75 +107,75 @@ const WriteReview = () => {
         <div className="writeReviewContainer">
             <h2>Write a Review</h2>
             <p> Before writing a review, make sure to follow the guidelines
-                listed on the <Link to = "/Rules/"> Rules Page</Link>.
+                listed on the <Link to="/Rules/"> Rules Page</Link>.
             </p>
             <div className="review-section">
-            <h3>Building Rating</h3>
-            <Rating
-                name="building-rating"
-                value={buildingRating}
-                precision={0.1}
-                onChange={(event, newValue) => {
-                    setBuildingRating(newValue);
-                    calculateOverallRating();
-              }}
-            />
-        </div>
+                <h3>Building Rating</h3>
+                <Rating
+                    name="building-rating"
+                    value={buildingRating}
+                    precision={0.1}
+                    onChange={(event, newValue) => {
+                        setBuildingRating(newValue);
+                        calculateOverallRating();
+                    }}
+                />
+            </div>
 
-        <div className="review-section">
-            <h3>Room Rating</h3>
-            <Rating
-                name="room-rating"
-                value={roomRating}
-                precision={0.1}
-                onChange={(event, newValue) => {
-                    setRoomRating(newValue);
-                    calculateOverallRating();
-                }}
-            />
-        </div>
+            <div className="review-section">
+                <h3>Room Rating</h3>
+                <Rating
+                    name="room-rating"
+                    value={roomRating}
+                    precision={0.1}
+                    onChange={(event, newValue) => {
+                        setRoomRating(newValue);
+                        calculateOverallRating();
+                    }}
+                />
+            </div>
 
-        <div className="review-section">
-            <h3>Location Rating</h3>
-            <Rating
-                name="location-rating"
-                value={locationRating}
-                precision={0.1}
-                onChange={(event, newValue) => {
-                    setLocationRating(newValue);
-                    calculateOverallRating();
-                }}
-            />
-        </div>
+            <div className="review-section">
+                <h3>Location Rating</h3>
+                <Rating
+                    name="location-rating"
+                    value={locationRating}
+                    precision={0.1}
+                    onChange={(event, newValue) => {
+                        setLocationRating(newValue);
+                        calculateOverallRating();
+                    }}
+                />
+            </div>
 
-        <div className="review-section">
-            <h3>Cleanliness Rating</h3>
-            <Rating
-                name="cleanliness-rating"
-                value={cleanlinessRating}
-                precision={0.1}
-                onChange={(event, newValue) => {
-                    setCleanlinessRating(newValue);
-                    calculateOverallRating();
-                }}
-            />
-        </div>
+            <div className="review-section">
+                <h3>Cleanliness Rating</h3>
+                <Rating
+                    name="cleanliness-rating"
+                    value={cleanlinessRating}
+                    precision={0.1}
+                    onChange={(event, newValue) => {
+                        setCleanlinessRating(newValue);
+                        calculateOverallRating();
+                    }}
+                />
+            </div>
 
-        <div className="review-section">
-            <h3>Overall Rating</h3>
-            
-            <Rating name="overall-rating" value={overallRating} precision={1} readOnly />
-        </div>
+            <div className="review-section">
+                <h3>Overall Rating</h3>
 
-        <div className="review-section">
-            <h3>Write Your Review</h3>
-            <textarea
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-            rows={4}
-            cols={50}
-            />
-        </div>
+                <Rating name="overall-rating" value={overallRating} precision={1} readOnly />
+            </div>
+
+            <div className="review-section">
+                <h3>Write Your Review</h3>
+                <textarea
+                    value={reviewText}
+                    onChange={(e) => setReviewText(e.target.value)}
+                    rows={4}
+                    cols={50}
+                />
+            </div>
             <button className="submit-button" onClick={handleReviewSubmit}>Submit Review</button>
         </div>
     );

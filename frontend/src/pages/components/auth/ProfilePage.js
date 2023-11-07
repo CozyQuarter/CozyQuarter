@@ -18,11 +18,19 @@ const ProfilePage = () => {
         }
     };
 
+    // Define the base API URL based on the environment
+    const API_BASE_URL = process.env.NODE_ENV === 'production'
+        ? 'https://cozyquarter-9251ad96e93b.herokuapp.com'
+        : 'http://localhost:8000';
+
     useEffect(() => {
         // Fetch user-specific reviews
         const fetchUserReviews = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/getUserReviews/${currentUser.email}`, {
+
+                const apiUrl = `${API_BASE_URL}/api/getUserReviews/${currentUser.email}`;
+
+                const response = await fetch(apiUrl, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -62,7 +70,7 @@ const ProfilePage = () => {
                     <h3>Your Reviews:</h3>
                     <div className="user-reviews">
                         {userReviews.map((review) => (
-                            <Review key={review._id} reviewData={review}  hideReportButton />
+                            <Review key={review._id} reviewData={review} hideReportButton />
                         ))}
                     </div>
                     <button className="logout-button" onClick={handleLogout}>Logout</button>

@@ -68,15 +68,20 @@ const ReviewPage = ({ dorm_id }) => {
   const [reviews, setReviews] = useState([]);
   const { currentUser } = useAuth();
 
+  // Define the base API URL based on the environment
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+? 'https://cozyquarter-9251ad96e93b.herokuapp.com'
+: 'http://localhost:8000';
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/getReviews/${dorm_id}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch reviews');
-        }
+        
+        const apiUrl = `${API_BASE_URL}/api/getReviews/${dorm_id}`;
 
+        const response = await fetch(apiUrl);
+        
         const data = await response.json();
         setReviews(data.reviews);
       } catch (error) {

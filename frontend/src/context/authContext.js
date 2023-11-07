@@ -14,6 +14,12 @@ export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
     console.log('in authContext.js');
+
+    // Define the base API URL based on the environment
+    const API_BASE_URL = process.env.NODE_ENV === 'production'
+        ? 'https://cozyquarter-9251ad96e93b.herokuapp.com'
+        : 'http://localhost:8000';
+
     async function signup(email, password, firstName, lastName) {
         const auth = getAuth();
 
@@ -27,7 +33,7 @@ export function AuthProvider({ children }) {
             });
 
             // Save additional user data to MongoDB
-            const response = await fetch('http://localhost:8000/api/createUser', {
+            const response = await fetch(`${API_BASE_URL}/api/createUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
