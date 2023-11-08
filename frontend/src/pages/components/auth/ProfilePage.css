@@ -1,14 +1,15 @@
 .profile-container {
     background-color: #ffffff; /* Red background color */
     color: #000000; /* White text color */
-    padding: 20px;
+    padding: 10px;
+    padding-top: 0px;
     text-align: center;
 }
 
 .profile-content {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .profile-header {
@@ -25,7 +26,10 @@
 }
 
 .logout-button {
+    font-size: 1em;
     background-color: #FF0000; /* Red button background color */
+    border: 1px solid red;
+    border-radius: 4px;
     color: #FFFFFF; /* White button text color */
     padding: 10px 20px;
     border: none;

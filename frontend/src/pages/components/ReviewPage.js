@@ -173,7 +173,6 @@ const ReviewPage = ({ dorm_id }) => {
       </div>
 
       <div class="left-panel">
-        Reviews go here
         {reviews.map((review, index) => (
           <Review key={index} reviewData={review} />
         ))}

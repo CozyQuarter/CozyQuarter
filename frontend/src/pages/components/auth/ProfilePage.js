@@ -3,6 +3,7 @@ import { useAuth } from '../../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import Review from '../Review';
 import './ProfilePage.css'; // Import your CSS file
+import '../../../index.css'
 
 const ProfilePage = () => {
     const { currentUser, logout } = useAuth();
@@ -52,7 +53,7 @@ const ProfilePage = () => {
             {currentUser ? (
                 <div className="profile-content">
                     <div className="profile-header">
-                        <h2>Welcome, {currentUser.displayName}!</h2>
+                        <b><span className="custom-heading3">Welcome, </span><span className="custom-heading2">{currentUser.displayName}</span><span className="custom-heading3">!</span></b>
                         <p>Email: {currentUser.email}</p>
                     </div>
                     <div className="profile-picture">

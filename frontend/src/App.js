@@ -53,7 +53,6 @@ function App() {
           {/* LandingPage, Signup, and Signin do not have Header and Footer */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/writeReview" element={<WriteReview />} />
           <Route path="/writeReview/:dorm_id" element={<WriteReview />} />
 
@@ -78,6 +77,11 @@ function App() {
                     <Route
                       path="/AllDorms/"
                       element={<AllDorms />}
+                    />
+
+                    <Route
+                      path="/profile"
+                      element={<ProfilePage />}
                     />
 
                     <Route
