@@ -65,6 +65,8 @@ const dorms = [
 ];
 
 const ReviewPage = ({ dorm_id }) => {
+
+  // Getting reviews
   const [reviews, setReviews] = useState([]);
   const { currentUser } = useAuth();
 
@@ -98,6 +100,40 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
     fetchData();
   }, [dorm_id]);
 
+  // Sorting reviews
+  // Order, ascending or descending
+  const [sortType, setSortType] = useState('ascending');
+  const [sortByField] = useState("overallRating");
+
+  // Store filter/latest reviews
+  const [result, setResult] = useState();
+  const [state, setstate] = useState({
+      query: '',
+      list: reviews
+  })
+  
+  // Sort reviews based on sort type and available results
+  function sortFunc(results, sortType, sortByField) {
+    if (sortType === 'ascending'){
+        results.sort((a,b) => a[sortByField] < b[sortByField] ? -1 : 1)
+    }
+    else if (sortType === 'descending'){
+        results.sort((a,b) => b[sortByField] > a[sortByField] ? 1 : -1)
+    }
+    return results;
+  }
+
+  // Dropdown to sort ratings in ascending or descending order
+  function sortOrder(e) {
+    setSortType(e);
+    setstate({
+          query: state.query,
+          list: !result ? sortFunc(reviews, e, sortByField) : sortFunc(result, e, sortByField)
+      })
+  }
+
+
+  // Get dorm image
   let img_path = dorm_id + ".png";
   console.log('DORM ID IS: ', dorm_id);
   // Find dorm
@@ -155,9 +191,16 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
       {/* Browse Reviews and Write Review button */}
       <div class="panels">
         <div class="left-panel">
-          <div class="custom-heading3">
-            <b>Browse Reviews</b>
-          </div>
+          <span class="custom-heading3"> <b>Browse Reviews</b> </span>
+
+          {/* Sort order ascending/descending */}
+          <span class="margin">Sort By </span>
+            <select class="dropdown-menu-behind" defaultValue={'ascending'} onChange={(e) => sortOrder(e.target.value)}>
+                <option value="ascending" disabled>None</option>
+                <option value="ascending">Lowest Ratings First</option>
+                <option value="descending">Highest Ratings First</option>
+            </select>
+          
 
         </div>
         <div className="right-panel">

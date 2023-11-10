@@ -4,6 +4,7 @@
     flex-direction: row;
     /* Set the main axis as row to position elements from left to right */
     padding: 10px;
+    margin: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
