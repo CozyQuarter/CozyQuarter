@@ -106,43 +106,42 @@
   /* Remove the default input outline */
 }
 
-.next-button {
-  width: 140%;
-  padding: 10px;
-  font-size: 1em;
-  background-color: red;
-  /* Adjust the color as needed */
-  color: #fff;
-  border: 1px solid red;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
+
+
+.signin-button:hover {
+  --y: -5;
+  --scale: 1.05;
+  background: red; /* Change background color to red on hover */
 }
 
-.signup-message {
-  margin-top: 20px;
-  font-size: 1em;
-}
-
-.signup-button {
-  text-decoration: inherit;
-  /* for some reason there is always an underline no matter what */
-  /* so I just made it red to hide it */
-  text-decoration-color: red;
-  justify-content: center;
-  width: 140%;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 1em;
-  background-color: red;
-  /* Adjust the color as needed */
-  color: #fff;
-  border: 1px solid red;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 .guest-link {
   margin-top: 10px;
   font-size: 1em;
+}
+
+.next-button,
+.signup-button {
+  width: 140%;
+  padding: 10px;
+  font-size: 1em;
+  background-color: black; /* Start with a black background */
+  color: #fff;
+  border: 1px solid black; /* Start with a black border */
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s; /* Add transition for background, border, and transform */
+}
+
+.next-button:hover,
+.signup-button:hover {
+  background-color: red; /* Change background color to red on hover */
+  border-color: red; /* Change border color to red on hover */
+  transform: translateY(-5px); /* Add translation for the popping-out effect */
+}
+
+.next-button:active,
+.signup-button:active {
+  transform: translateY(0); /* Bring the button back to its original position on click */
 }

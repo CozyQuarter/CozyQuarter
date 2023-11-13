@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from "../../../images/logo.png";
 import React, { useState, useEffect } from 'react';
-import DropdownMenu from '../DropdownMenu';
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 import { useAuth } from '../../../context/authContext';
 import MobileMenu from './MobileMenu';
 import './Header.css';

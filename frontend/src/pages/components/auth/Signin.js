@@ -1,8 +1,9 @@
+// Signin.js
 import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; // Import these functions
-import './LandingPage/LandingPage.css';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import './Signin.css'; // Import the new CSS file
 import logo from '../../../images/logo.png';
 import dorm from '../../../images/dorm.jpg';
 
@@ -17,9 +18,9 @@ const Signin = () => {
     e.preventDefault();
 
     try {
-      const auth = getAuth(); // Get the authentication instance
-      await signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value); // Use signInWithEmailAndPassword with the auth instance
-      navigate('/Home'); // Redirect to the home page upon successful sign-in
+      const auth = getAuth();
+      await signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value);
+      navigate('/Home');
     } catch (error) {
       console.error('Error signing in:', error.message);
       setError('Failed to sign in. Please check your credentials.');
@@ -31,8 +32,6 @@ const Signin = () => {
 
       <div className="logo-container">
         <img src={logo} alt="CozyQuarter Logo" />
-        {/* Company name */}
-        {/* <h1>CozyQuarter</h1> */}
         <img src={dorm} alt="Clipart of dorm" />
       </div>
 
@@ -62,7 +61,7 @@ const Signin = () => {
             />
           </div>
 
-          <button type="submit" className="signup-button">Sign In</button>
+          <button type="submit" className="signin-button">Sign In</button>
         </form>
         <p>
           Don't have an account? <Link to="/signup">Sign up here</Link>.
