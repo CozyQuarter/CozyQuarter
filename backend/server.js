@@ -11,6 +11,7 @@ const submitReview = require('./api/submitReview');
 const getReviews = require('./api/getReviews');
 const getUserReviews = require('./api/getUserReviews');
 const getDormAvgRatings = require('./api/getDormAvgRatings');
+const deleteReview = require('./api/deleteReview');
 const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -58,6 +59,7 @@ app.use('/api/submitReview', submitReview);
 app.use('/api/getReviews', getReviews);
 app.use('/api/getUserReviews', getUserReviews);
 app.use('/api/getDormAvgRatings', getDormAvgRatings);
+app.use('/api/deleteReview', deleteReview);
 
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {

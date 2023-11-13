@@ -8,6 +8,7 @@ const reviewSchema = new mongoose.Schema({
   cleanlinessRating: { type: Number, min: 1, max: 5, required: true },
   overallRating: { type: Number, min: 1, max: 5, required: true },
   reviewText: { type: String },
+
 });
 
 const Review = mongoose.model('Review', reviewSchema);
