@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Review from '../Review';
 import './ProfilePage.css'; // Import your CSS file
 import '../../../index.css'
+import './Signin.css'
 
 const ProfilePage = () => {
     const { currentUser, logout } = useAuth();

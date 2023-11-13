@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
 import './LandingPage/LandingPage.css';
+import './Signin.css'; // Import the new CSS file
 import logo from '../../../images/logo.png';
 import dorm from '../../../images/dorm.jpg';
 
@@ -102,7 +103,7 @@ const Signup = () => {
           />
         </div>
 
-        <button onClick={handleSignup} className="signup-button">Sign Up</button>
+        <button type="submit" className="signin-button" onClick={handleSignup}>Sign Up</button>
         <p>
           Already have an account? <Link to="/signin">Sign in here</Link>.
         </p>

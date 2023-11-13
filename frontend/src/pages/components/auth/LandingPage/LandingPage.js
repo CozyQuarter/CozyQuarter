@@ -67,6 +67,7 @@ const LandingPage = () => {
             {/* Email input */}
             <div className="input-container">
               <label htmlFor="email">Email:</label>
+              <br></br>
 
               <input
                 type="email"
@@ -97,9 +98,9 @@ const LandingPage = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
         {/* Next button */}
-        <div className="next-button" onClick={handleNext}>
+        <button type="submit" className="signin-button" onClick={handleNext}>
           {step === 1 ? 'Next' : 'Sign In'}
-        </div>
+        </button>
 
         {/* Sign up message and button */}
         {step === 1 ? (
@@ -108,7 +109,7 @@ const LandingPage = () => {
           <p className="signup-message">Not your account?</p>
         )}
         <Link to="/signup">
-          <div className="signup-button">Sign Up</div>
+          <button type="submit" className="signin-button">Sign Up</button>
         </Link>
 
         {/* Continue as Guest */}

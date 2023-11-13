@@ -46,6 +46,7 @@ const Signin = () => {
             <input
               type="email"
               id="email"
+              placeholder="Enter your email"
               ref={emailRef}
               required
             />
@@ -56,6 +57,7 @@ const Signin = () => {
             <input
               type="password"
               id="password"
+              placeholder="Enter your password"
               ref={passwordRef}
               required
             />

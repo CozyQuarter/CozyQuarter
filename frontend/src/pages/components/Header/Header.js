@@ -167,7 +167,7 @@ const Header = () => {
                     </Link>
                 ) : (
                     // If the user is not signed in, show "Sign In" button
-                    <Link to="../auth/Signin">
+                    <Link to="/Signin">
                         <h3>Sign In</h3>
                     </Link>
                 )}

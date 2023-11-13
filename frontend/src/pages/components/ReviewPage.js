@@ -154,9 +154,9 @@ const ReviewPage = ({ dorm_id }) => {
 				<>
 				  <h3 className="custom-heading3">
 					<em>
-					  <span className="highlight-red"> &nbsp;Average Rating:&nbsp; </span>
+					  <span className="highlight-red"> &nbsp;Overall:&nbsp; </span>
 					</em> &nbsp;
-					<OverallRating value={averageRatings.overallRating} precision={0.5} readOnly />
+					<OverallRating value={averageRatings.overallRating} precision={0.5} readOnly/>
 					<span> {averageRatings.overallRating.toFixed(2)} </span>
 					<span>
 					  ({averageRatings.totalReviews ? averageRatings.totalReviews : 0} {averageRatings.totalReviews === 1 ? 'review' : 'reviews'})

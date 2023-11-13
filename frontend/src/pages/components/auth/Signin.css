@@ -17,12 +17,11 @@
     cursor: pointer;
     font-size: calc(var(--fontSize) * 1rem);
     font-weight: bold;
-    font-family: sans-serif;
     outline: transparent;
     padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
     position: relative;
-    text-decoration: none;
-    height: 60px;
+    text-decoration: none !important;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,4 +40,3 @@
     --y: 0;
     --scale: 0.95;
   }
-  
