@@ -3,7 +3,7 @@ import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { AuthContext } from '../../context/authContext';
 import ReviewPage from './ReviewPage';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import './writeReview.css';
 
 
@@ -19,6 +19,7 @@ const WriteReview = () => {
     const [reviewText, setReviewText] = useState('');
 
     const authContext = useContext(AuthContext);
+    const navigate = useNavigate();
 
     // Calculate overallRating based on other ratings with proper precision
     const calculateOverallRating = () => {
@@ -93,6 +94,9 @@ const WriteReview = () => {
                 .then((data) => {
                     // Handle success
                     console.log('Review submitted successfully', data);
+                    // navigate('/ReviewPage/${dorm_id}');
+                    navigate(-1);
+
                 })
                 .catch((error) => {
                     // Handle error

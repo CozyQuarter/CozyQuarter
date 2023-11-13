@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const Review = require('../models/Review');
 const Dorm = require('../models/Dorm');
@@ -40,13 +41,16 @@ router.post('/', async (req, res) => {
 
         // Check if a Dorm with the given dorm_id exists
         let dorm = await Dorm.findOne({ name: dorm_id });
-
         // If the dorm doesn't exist, create it
         if (!dorm) {
             dorm = new Dorm({
+                _id: new mongoose.Types.ObjectId(), // Generate a new ObjectId
                 name: dorm_id,
                 reviews: [],
             });
+            console.log("Created new dorm in DB. Dorm ID:", dorm._id);
+            console.log(dorm.name);
+
         }
 
         // Create a new review
