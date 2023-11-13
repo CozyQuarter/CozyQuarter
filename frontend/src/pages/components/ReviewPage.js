@@ -68,6 +68,13 @@ const ReviewPage = ({ dorm_id }) => {
 
   // Getting reviews
   const [reviews, setReviews] = useState([]);
+  const [averageRatings, setAverageRatings] = useState({
+    overallRating: 0,
+    buildingRating: 0,
+    roomRating: 0,
+    locationRating: 0,
+    cleanlinessRating: 0,
+  });
   const { currentUser } = useAuth();
 
   // Define the base API URL based on the environment
@@ -86,6 +93,13 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
         
         const data = await response.json();
         setReviews(data.reviews);
+
+
+                // Fetch average ratings
+                const avgRatingsResponse = await fetch(`${API_BASE_URL}/api/getDormAvgRatings/${dorm_id}`);
+                const avgRatingsData = await avgRatingsResponse.json();
+                setAverageRatings(avgRatingsData.averageRatings);
+        
       } catch (error) {
         const response = await fetch(`/api/getReviews/${dorm_id}`);
 
@@ -163,24 +177,26 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
             <p><b>Room Prices:</b> Single: {singles} &nbsp; Double: {doubles} &nbsp; Triple: {triples}</p>
 
           </div>
-
+          {reviews && reviews.length > 0 && ( // Check if there are reviews
+            <>
           <h3 className="custom-heading3"><em><span class="highlight-red"> &nbsp;Average Rating:&nbsp; </span></em> &nbsp;
-            <OverallRating defaultValue={4.5} precision={0.5} readOnly /></h3>
+            <OverallRating value={averageRatings.overallRating} precision={0.5} readOnly /></h3>
 
           <div class="body">
             <p><b><em>Building:</em></b> &nbsp;
-              <SubRating readOnly size='small' /> &nbsp; &nbsp;&nbsp;
+            <SubRating value={averageRatings.buildingRating} readOnly size="small" /> &nbsp; &nbsp;&nbsp;
 
               <b><em>Room:</em></b> &nbsp;
-              <SubRating readOnly size='small' /></p>
+              <SubRating value={averageRatings.roomRating} readOnly size='small' /></p>
 
             <p><b><em>Location:</em></b> &nbsp;
-              <SubRating readOnly size='small' />  &nbsp; &nbsp;
+              <SubRating value={averageRatings.locationRating} readOnly size='small' />  &nbsp; &nbsp;
 
               <b><em>Cleanliness:</em></b> &nbsp;
-              <SubRating readOnly size='small' /></p>
+              <SubRating value={averageRatings.cleanlinessRating} readOnly size='small' /></p>
           </div>
-
+          </>
+          )}
         </div>
         <div className="right-panel2">
           <img src={require(`../../images/${img_path}`)} alt="Outside of dorm" className="dorm-image" />
@@ -221,9 +237,13 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
       </div>
 
       <div class="left-panel">
-        {reviews.map((review, index) => (
-          <Review key={index} reviewData={review} />
-        ))}
+  {reviews && reviews.length > 0 ? ( // Check if reviews are available
+    reviews.map((review, index) => (
+      <Review key={index} reviewData={review} />
+    ))
+  ) : (
+    <p>No reviews available for this dorm.</p> // Display a message when there are no reviews
+  )}
 
       </div>
     </div>

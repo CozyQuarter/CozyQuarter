@@ -21,7 +21,7 @@ router.get('/:dorm_name', async (req, res) => {
 
         console.log('Fetched reviews for dorm:', dorm_name); // Log that reviews were successfully fetched
 
-        console.log('Review Data:', reviews);
+        // console.log('Review Data:', reviews);
 
 
         res.json({ reviews });
