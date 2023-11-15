@@ -63,3 +63,39 @@
     --y: 0;
     --scale: 0.95;
 }
+
+.delete-review-button {
+    --borderWidth: 2;
+    --buttonColor: #c7edef;
+    --bg: hsl(0, 0%, 5%);
+    --backdrop: transparent;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    border-radius: 9999px;
+    line-height: 24px;
+    background-color: #e6e6e6;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border-radius: 7px;
+    
+
+    height: 30px;
+    width: 120px;
+
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+    transform: translate(0, calc(var(--y, 0) * 1%)) scale(var(--scale, 1));
+}
+
+.delete-review-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+}
