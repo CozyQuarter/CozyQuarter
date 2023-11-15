@@ -1,4 +1,9 @@
-// Bryckwyck.js
+/**
+ * Bryckwyck Component
+ * 
+ * This component represents the dormitory review page for 'Bryckwyck'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Bryckwyck'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"

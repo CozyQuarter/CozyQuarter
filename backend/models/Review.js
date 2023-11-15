@@ -1,3 +1,17 @@
+/**
+ * Review Model
+ * 
+ * Defines the Mongoose model for storing reviews of buildings. 
+ * It includes user references, ratings for different aspects of the building,
+ * and an optional review text field.
+ * 
+ * Dependencies:
+ * - mongoose: For MongoDB object modeling.
+ * 
+ * Exports:
+ * - Mongoose model 'Review' based on the defined schema.
+ */
+
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({

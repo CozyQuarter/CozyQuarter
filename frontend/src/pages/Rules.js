@@ -1,3 +1,14 @@
+/**
+ * Rules Component
+ * 
+ * This component displays guidelines and rules for using CozyQuarter, ensuring a respectful and constructive
+ * environment for posting dorm reviews and photos. Users are expected to adhere to these guidelines when
+ * sharing content on the platform.
+ * 
+ * The rules cover various aspects, including hate speech, personal attacks, inappropriate content, false information,
+ * promotional content, plagiarism, privacy, and reporting reviews that violate these rules.
+ */
+
 import React from 'react';
 import dorm from '../images/dorm.jpg';  // Make sure to import the image
 

@@ -1,4 +1,9 @@
-// Nugent.js
+/**
+ * Nugent Component
+ * 
+ * This component represents the dormitory review page for 'Nugent'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Nugent'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"

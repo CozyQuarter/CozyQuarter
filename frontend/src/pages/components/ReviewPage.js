@@ -1,23 +1,30 @@
 /**
- * ReviewPage Component
+ * WriteReview Component
  * 
- * This component is a reusable review page to be shown for different dorms. 
- * It dynamically generates content based on the provided dorm ID (`dorm_id`). The component:
- * - Fetches and displays reviews, average ratings, and various sub-ratings (like building, room, location, cleanliness) for the specified dorm.
- * - Shows detailed dorm information including the year, room type, and room prices for different room categories (Single, Double, Triple).
- * - Allows users to sort reviews in ascending or descending order based on overall ratings.
- * - Provides functionality for signed-in users to write a review and for others to sign in for this purpose.
- * - Displays the dorm image and offers a 'See Photos' feature.
+ * The WriteReview component allows users to submit reviews for dormitories. Users can rate various aspects of the dorm, write a review, and submit it.
  * 
- * It utilizes state management via `useState` for handling reviews, ratings, and sorting functionality, and `useEffect` for data fetching on component mount.
- * The component styles are derived from '@mui/material' styles for consistent UI elements like ratings.
- * The data for dormitories (like names, prices, room types) is stored in a local array for easy access and manipulation.
+ * Dependencies:
+ * - React: The component is built using React.
+ * - MUI components (Box, Typography, Rating, Link) for styling.
+ * - Context API (AuthContext) for managing user authentication.
+ * - Axios for making HTTP requests to submit reviews.
+ * - React Router (useParams, useNavigate, Link) for navigation within the application.
+ * - Custom CSS styles ('./writeReview.css') for component-specific styling.
+ * 
+ * Exported Component:
+ * - WriteReview
+ * 
+ * Component Structure:
+ * - Allows users to rate various aspects (building, room, location, cleanliness) using star ratings.
+ * - Calculates an overall rating based on individual ratings with a specified precision.
+ * - Sends a POST request to the API with the review data for submission.
+ * - Provides user feedback and error handling for successful and unsuccessful submissions.
+ * 
+ * DORM IMAGE FORMAT:
+ * - Cropped to 16:9 (width 16, height 9)
+ * - In the images folder, as a .png file
+ * - Named [Dorm].png, capitalized (in the exact same format as the dorm class name)
  */
-
-// DORM IMAGE FORMAT:
-// Cropped to 16:9 (width 16, height 9)
-// In the images folder, as a .png file
-// named [Dorm].png, capitalized (in the exact same format as the dorm class name)
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';

@@ -1,5 +1,11 @@
-// This is going to be a list of all dorms that can be filtered and sorted
-// For now it's blank so this is where you go when you click All Dorms on the header
+/**
+ * AllDorms Component
+ * 
+ * This component provides a list of all dormitories that can be filtered and sorted based on various criteria.
+ * Users can search for dorms by name, sort them by name, year, room type, or price, and filter them by year and room type.
+ * The component utilizes state management with `useState` and dynamically updates the displayed dorms based on user actions.
+ * Dorm data is fetched from a local array and displayed in a table format with dorm details and links to individual dorm pages.
+ */
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -279,8 +285,6 @@ const AllDorms = () => {
 
         </div>
     )
-    
-    
 }
 
 export default AllDorms;

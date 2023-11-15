@@ -1,3 +1,25 @@
+/**
+ * Review Component
+ * 
+ * The Review component displays a user review with detailed information, including ratings for various categories like building, room, location, and cleanliness. 
+ * It also provides an optional reporting feature for reporting inappropriate content in a review.
+ * 
+ * Helper Functions:
+ * - getOverallRatingBoxColor: Determines the background color of the overall rating box based on the rating value. It uses a color-coded system to indicate the review's overall quality.
+ * - handleReport: Handles the process of reporting a review. It uses emailjs-com to send a report email with the selected reasons and details.
+ * - renderReportButton: Conditionally renders the report button based on the 'hideReportButton' prop. If 'hideReportButton' is set to true, the button is not rendered.
+ * 
+ * Dependencies:
+ * - React: The component is built using React.
+ * - emailjs-com: Used for sending email notifications when reporting a review.
+ * - MUI components (Box, Typography, Paper, Rating, Button) for styling.
+ * - Custom CSS styles ('./Review.css') for component-specific styling.
+ * 
+ * Exported Component:
+ * - Review
+ * 
+ */
+
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Box, Typography, Paper, Rating, Button } from '@mui/material';

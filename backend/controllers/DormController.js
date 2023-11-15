@@ -1,3 +1,26 @@
+/**
+ * Dormitory Management Controller
+ * 
+ * This controller handles the logic for managing dormitory data in the application. It includes functions for creating, retrieving, updating, and deleting dormitories.
+ * 
+ * Functions:
+ * - GET '/': Retrieves all dormitories from the database.
+ * - POST '/': Creates a new dormitory with the provided name and location.
+ * - GET '/:dormId': Fetches a specific dormitory by its ID.
+ * - PUT '/:dormId': Updates the details (name and location) of a specific dormitory.
+ * - DELETE '/:dormId': Deletes a dormitory by its ID.
+ * 
+ * Each function is designed to interact with the Dorm model for database operations and to handle responses and errors appropriately. 
+ * It uses try-catch blocks to manage server errors and return a 500 Server Error response when necessary.
+ * 
+ * Dependencies:
+ * - express: For routing and handling HTTP requests.
+ * - Dorm model: MongoDB model for dormitory data handling.
+ * 
+ * Exports:
+ * - Controller with functions configured for dormitory management operations.
+ */
+
 const express = require('express');
 const router = express.Router();
 const Dorm = require('../models/Dorm');

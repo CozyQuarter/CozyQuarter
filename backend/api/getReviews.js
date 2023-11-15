@@ -1,4 +1,22 @@
-// Import your Mongoose models
+/**
+ * Dorm Reviews API
+ * 
+ * This module provides an Express router for fetching reviews of a specific dormitory. 
+ * It handles GET requests to '/:dorm_name', where 'dorm_name' is a dynamic parameter representing the dorm's name.
+ * 
+ * The router queries the Dorm model to find the specified dorm and populates it with associated reviews from the Review model.
+ * If the dorm is found, it returns the reviews. If the dorm is not found, it returns a 404 error. 
+ * Any server-side errors during the process result in a 500 Internal Server Error response.
+ * 
+ * Dependencies:
+ * - Dorm model: For querying dormitory data from the database.
+ * - Review model: For accessing review data associated with dormitories.
+ * - express: For creating the router.
+ * 
+ * Exports:
+ * - Express router configured for fetching reviews of a specific dormitory.
+ */
+
 const Dorm = require('../models/Dorm');
 const Review = require('../models/Review');
 const express = require('express');
@@ -22,7 +40,6 @@ router.get('/:dorm_name', async (req, res) => {
         console.log('Fetched reviews for dorm:', dorm_name); // Log that reviews were successfully fetched
 
         // console.log('Review Data:', reviews);
-
 
         res.json({ reviews });
     } catch (error) {

@@ -1,4 +1,12 @@
-// Import the functions you need from the SDKs you need
+/**
+ * Firebase Configuration and Initialization
+ * 
+ * This code sets up Firebase for use in the CozyQuarter web application. It imports and initializes
+ * Firebase services, such as Authentication, based on the provided Firebase configuration.
+ * 
+ * For Firebase JS SDK v7.20.0 and later, measurementId is optional.
+ */
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // import { getFirestore } from "firebase/firestore";

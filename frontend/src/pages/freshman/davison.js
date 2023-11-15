@@ -1,4 +1,9 @@
-// Davison.js
+/**
+ * Davidson Component
+ * 
+ * This component represents the dormitory review page for 'Davidson'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Davidson'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"
