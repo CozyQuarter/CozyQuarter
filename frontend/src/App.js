@@ -10,7 +10,7 @@ import Dashboard from './pages/components/auth/Dashboard';
 import LandingPage from './pages/components/auth/LandingPage/LandingPage';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import FAQ from "./pages/FAQ";
+import FAQ from "./pages/components/FAQ/FAQ";
 import Rules from "./pages/Rules";
 import ProfilePage from './pages/components/auth/ProfilePage';
 
