@@ -1,4 +1,9 @@
-// Hall.js
+/**
+ * Hall Component
+ * 
+ * This component represents the dormitory review page for 'Hall'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Hall'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"

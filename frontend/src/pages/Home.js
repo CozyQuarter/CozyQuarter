@@ -1,3 +1,11 @@
+/**
+ * Home Component
+ * 
+ * This component represents the homepage of CozyQuarter, providing users with a welcome and an
+ * introduction to the platform's purpose. It encourages users to explore dorm reviews and make informed
+ * choices for their campus housing. The component also includes a campus map section for added convenience.
+ */
+
 import React, { useState } from 'react';
 import dorm from '../images/dorm.jpg';  // Make sure to import the image
 import MapComponent from './components/CampusMap';

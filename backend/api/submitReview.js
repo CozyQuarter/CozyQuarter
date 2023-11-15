@@ -1,3 +1,23 @@
+/**
+ * Review Submission API
+ * 
+ * This module provides an Express router for submitting reviews. It handles POST requests on the root ('/') endpoint.
+ * The process involves receiving review data, checking for the existence of the user and dorm, and creating a new review.
+ * 
+ * The router retrieves the user by email and the dorm by its ID. If the dorm doesn't exist, it creates a new one. 
+ * After creating the review, it updates the corresponding Dorm and User documents with the review reference.
+ * 
+ * If the user is not found, it returns a 404 error. For any server-side issues during submission, it responds with a 500 error.
+ * 
+ * Dependencies:
+ * - express: Framework for creating the router and handling HTTP requests.
+ * - mongoose: For database interactions and object modeling.
+ * - Review, Dorm, User models: MongoDB models used for handling review, dorm, and user data in the database.
+ * 
+ * Exports:
+ * - Express router: Configured for handling review submissions, including data validation, database operations, and error management.
+ */
+
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();

@@ -1,3 +1,13 @@
+/**
+ * AboutUs Component
+ * 
+ * This component displays information about CozyQuarter, including its purpose, development status,
+ * and introduces the team responsible for its creation. It includes a brief overview of CozyQuarter's
+ * mission to provide a platform for sharing dormitory feedback among RPI students and prospective
+ * residents. The team members' profiles, roles, and aspirations are also presented to provide insight
+ * into the project's development. Additionally, it features an image related to dormitory living.
+ */
+
 import React from 'react';
 import dorm2 from '../images/dorm2.jpg';  // Make sure to import the image
 

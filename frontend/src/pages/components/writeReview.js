@@ -1,3 +1,22 @@
+/**
+ * Write Review Component
+ * 
+ * A React component that allows users to write and submit reviews for a dormitory.
+ * It includes sections for rating different aspects and providing a written review.
+ * 
+ * Dependencies:
+ * - React: For creating and rendering the component.
+ * - Rating component from '@mui/material/Rating': For displaying and capturing ratings.
+ * - axios: For making HTTP requests to submit the review.
+ * - AuthContext from '../../context/authContext': For accessing user authentication information.
+ * - ReviewPage component: For navigation after successful review submission.
+ * - useParams, Link, and useNavigate from 'react-router-dom': For routing and navigation.
+ * - CSS styles from './writeReview.css': For styling the component.
+ * 
+ * Exported Component:
+ * - WriteReview: A React component for writing and submitting reviews.
+ */
+
 import React, { useContext, useState, useEffect } from 'react';
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
@@ -69,14 +88,12 @@ const WriteReview = () => {
 
             }
 
-
             // Determine the API URL based on the environment
             const apiUrl = process.env.NODE_ENV === 'production'
                 ? 'https://cozyquarter-9251ad96e93b.herokuapp.com/api/submitReview'
                 : 'http://localhost:8000/api/submitReview';
 
-            // Send a POST request to your API to create the review using fetch
-
+            // Send a POST request to your API to create the review using fetch                   
             fetch(apiUrl, {
                 method: 'POST',
                 headers: {

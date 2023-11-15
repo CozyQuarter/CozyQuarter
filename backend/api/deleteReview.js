@@ -1,3 +1,22 @@
+/**
+ * Review Deletion API
+ * 
+ * This module provides an Express router for deleting a specific review by its ID. 
+ * It handles DELETE requests to '/:reviewId', where 'reviewId' is a dynamic parameter representing the review's unique identifier.
+ * 
+ * The router first attempts to find and remove the specified review from the Review model. 
+ * If the review is found and successfully deleted, it then removes references to this review from the corresponding User and Dorm documents.
+ * If the review is not found, it returns a 404 error. Server-side errors during the process result in a 500 Internal Server Error response.
+ * 
+ * The process includes logging the state of reviews in Dorm documents before and after the deletion.
+ * 
+ * Dependencies:
+ * - Review, Dorm, and User models: For accessing and updating review data in the database.
+ * - express: For creating the router.
+ * 
+ * Exports:
+ * - Express router configured for deleting reviews by ID.
+ */
 
 const express = require('express');
 const router = express.Router();

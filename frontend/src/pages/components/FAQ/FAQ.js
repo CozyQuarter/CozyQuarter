@@ -1,3 +1,12 @@
+/**
+ * FAQ Component
+ * 
+ * This component provides a comprehensive FAQ and resources section for users to access valuable
+ * information about RPI dormitories. It includes external resources, frequently asked questions
+ * (FAQs), and collapsible sections for detailed answers. The component also features images and links
+ * to external RPI resources, enhancing the user's understanding of dormitory-related topics.
+ */
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import dorm2 from '../../../images/dorm2.jpg';  // Make sure to import the image

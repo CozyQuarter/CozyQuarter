@@ -1,20 +1,17 @@
 /**
- * Dorm Review API Router
- *
- * This script sets up an Express router to handle API requests for dorm reviews.
- * It includes an endpoint to fetch and calculate the average ratings of a specific dorm based on its name.
+ * Dorm Average Ratings API
  * 
- * Features:
- * - Retrieves a dorm's details by its name from the Dorm model.
- * - Populates the dorm data with its associated reviews from the Review model.
- * - Calculates average ratings across various categories (overall, building, room, location, cleanliness).
- * - Returns calculated average ratings and the total number of reviews for the requested dorm.
+ * Provides a GET route on '/:dorm_name' to fetch and calculate average ratings for a specified dorm. 
+ * Retrieves dorm data and associated reviews from the database. If no dorm is found, returns a 404 error. 
+ * In case of no reviews, returns zero ratings. Handles server-side errors with a 500 response.
  * 
- * Models:
- * - Uses 'Dorm' and 'Review' Mongoose models for data fetching and manipulation.
- *
- * Endpoint:
- * - GET '/:dorm_name': Fetches and calculates the average ratings for a dormitory identified by 'dorm_name'.
+ * Dependencies:
+ * - Dorm model: Used to access and query dormitory data from the database.
+ * - Review model: Utilized for retrieving and aggregating review data related to dormitories.
+ * - express: Framework for creating and managing the router and handling HTTP requests and responses.
+ * 
+ * Exports:
+ * - Express router: Configured to handle GET requests for dorm reviews and ratings, including data retrieval, aggregation, and error handling.
  */
 
 const Dorm = require('../models/Dorm');
