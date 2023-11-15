@@ -1,0 +1,72 @@
+/* for collapsible component */
+
+/* entire collapsible thing */
+
+.collapsible {
+    width: 90vw;
+    font-family: "Poppins";
+    font-size: 1em;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 0px;
+    align-items: left;
+    align-self: start;
+    justify-content: flex-start;
+    display: inline-block;
+  }
+
+  /* toggle (aka the question) */
+  
+  .toggle {
+    width:100%;
+    width: 90vw;
+    background-color: #fff;
+    cursor: pointer;
+    align-items: left;
+    align-self: start;
+    text-align: left;
+    font-family: "Poppins";
+    display: block;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 7px;
+  }
+
+  .toggle:hover {
+    background-color: #f2f2f2;
+  }
+
+  /* arrow on toggle */
+  .arrow {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .arrow.active {
+    transform: translateY(-2px) rotate(90deg);
+  }
+
+  /* content (aka answer) */
+    
+  .content {
+    width: 90vw;
+    height: auto;
+    margin-top: 5px;
+    padding: 10px;
+    display: none;
+    padding: .5rem 1rem;
+  }
+  
+  .show {
+    display: block;
+    align-items: left;
+  }
