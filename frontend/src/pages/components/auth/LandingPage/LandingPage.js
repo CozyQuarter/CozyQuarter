@@ -29,7 +29,7 @@ const LandingPage = () => {
     } else if (step === 2) {
       if (passwordRef.current && passwordRef.current.value) {
         setError('');
-        signIn();
+        navigate('/signin');
       } else {
         setError('Please enter your password.');
       }
@@ -55,7 +55,7 @@ const LandingPage = () => {
         <img src={dorm} alt="Clipart of dorm" />
         {/* Company name */}
         {/* <h1>CozyQuarter</h1> */}
-        
+
       </div>
 
       <div className="signin-container">

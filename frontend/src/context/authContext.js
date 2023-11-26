@@ -75,7 +75,7 @@ export function AuthProvider({ children }) {
 
             return user; // Return the user object if needed
         } catch (error) {
-            console.error('Error during signup:', error.message);
+            console.log('Error during signup:', error.message);
             throw error; // Propagate the error
         }
     }
