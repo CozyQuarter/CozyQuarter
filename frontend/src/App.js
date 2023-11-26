@@ -5,6 +5,8 @@ import Footer from './pages/components/Footer';
 import Signup from './pages/components/auth/Signup';
 import Signin from './pages/components/auth/Signin';
 import WriteReview from './pages/components/writeReview';
+import AddPhoto from './pages/components/addPhoto';
+import ViewPhotos from './pages/components/viewPhotos';
 
 import Dashboard from './pages/components/auth/Dashboard';
 import LandingPage from './pages/components/auth/LandingPage/LandingPage';
@@ -55,6 +57,10 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/writeReview" element={<WriteReview />} />
           <Route path="/writeReview/:dorm_id" element={<WriteReview />} />
+          <Route path="/addPhoto/:dorm_id" element={<AddPhoto />} />
+          <Route path="/viewPhotos/:dorm_id" element={<ViewPhotos />} />
+
+
 
           <Route path="/" element={<LandingPage />} />
 
@@ -184,8 +190,8 @@ function App() {
                       element={<FAQ />}
                     />
                     <Route
-                      path = "/Rules/"
-                      element = {<Rules />}
+                      path="/Rules/"
+                      element={<Rules />}
                     />
                     {/* Redirect any unknown route to LandingPage */}
                     <Route path="*" element={<Navigate to="/" replace />} />

@@ -1,4 +1,6 @@
 /* Header.css */
+
+/* Common styles for the mobile menu overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -8,21 +10,21 @@
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
     z-index: 2; /* Place it above the main content */
     display: none; /* Initially hidden */
-  }
-  
-  .main-content {
+}
+
+.main-content {
     position: relative; /* Make sure the main content stays in the background */
-  }
-  
-  .menu-content {
+}
+
+.menu-content {
     position: absolute;
     top: 0;
     right: 0;
     width: 250px; /* Adjust width as needed */
     background-color: #fff; /* Background color for the menu */
-  }
-  /* Header.css */
+}
 
+/* Hamburger menu styles */
 .menu-button {
     cursor: pointer;
 }
@@ -56,8 +58,7 @@
 .menu {
     position: absolute;
     top: 0;
-    right: -250px;
-    /* Adjust the value to control the menu position */
+    right: -250px; /* Adjust the value to control the menu position */
     background: #fff;
     width: 200px;
     height: 100%;

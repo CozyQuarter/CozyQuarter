@@ -23,6 +23,8 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   profilePicture: { type: String }, // This could be a URL to the profile picture
   reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
+  uploadedImages: [{ type: String }], // References to images uploaded by the user
+
 });
 
 module.exports = mongoose.model('User', userSchema);

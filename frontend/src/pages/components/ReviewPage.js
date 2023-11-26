@@ -194,8 +194,9 @@ const ReviewPage = ({ dorm_id }) => {
 	
 			<div className="right-panel2">
 			  <img src={require(`../../images/${img_path}`)} alt="Outside of dorm" className="dorm-image" />
-			  <div className="photos-button"><b> See Photos </b></div>
-			</div>
+			  <Link to={`/viewPhotos/${dorm_id}`} className="photos-button"><b> View Photos </b></Link>
+            {/* ^ Changed "See Photos" text to a Link for navigation */}
+        </div>
 		  </div>
 	
 		  {/* Browse Reviews and Write Review button */}
@@ -218,9 +219,15 @@ const ReviewPage = ({ dorm_id }) => {
 				  Sign In to Write Reviews
 				</Link>
 			  ) : (
-				<Link to={`/writeReview/${dorm_id}`} className="write-review-button" onClick={() => window.scroll(0, 0)}>
-				  Write a Review
-				</Link>
+				<>
+              <Link to={`/writeReview/${dorm_id}`} className="write-review-button" onClick={() => window.scroll(0, 0)}>
+                Write a Review
+              </Link>
+              <Link to={`/addPhoto/${dorm_id}`} className="add-photo-button" onClick={() => window.scroll(0, 0)}>
+                Add Photo
+              </Link>
+            </>
+				
 			  )}
 			</div>
 		  </div>

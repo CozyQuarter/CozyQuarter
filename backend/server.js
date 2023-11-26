@@ -12,11 +12,16 @@ const getReviews = require('./api/getReviews');
 const getUserReviews = require('./api/getUserReviews');
 const getDormAvgRatings = require('./api/getDormAvgRatings');
 const deleteReview = require('./api/deleteReview');
+const uploadPhoto = require('./api/uploadPhoto');
+const getPhotos = require('./api/getPhotos');
 const app = express();
 const path = require("path");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const session = require('express-session');
 const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+const Grid = require('gridfs-stream');
+const { ObjectId } = require('mongoose').Types; // Import ObjectId from mongoose
+
 
 
 
@@ -40,6 +45,15 @@ try {
   db.once('open', () => {
     console.log('Connected to MongoDB:', db.name);
     console.log('Connection details:', db.client.s.url);
+
+    // Initialize GridFS stream with the database connection
+    // Grid.mongo = { ObjectId }; // Set mongo property to use ObjectId from mongoose
+    // const gfs = Grid(db.db);
+
+
+    // // Pass 'gfs' to uploadPhoto.js for handling file uploads
+    // app.use('/api/uploadPhoto', uploadPhoto(gfs));
+
   });
   app.listen(port, () => {
     console.log(`Listening on ${port}`)
@@ -60,6 +74,8 @@ app.use('/api/getReviews', getReviews);
 app.use('/api/getUserReviews', getUserReviews);
 app.use('/api/getDormAvgRatings', getDormAvgRatings);
 app.use('/api/deleteReview', deleteReview);
+app.use('/api/uploadPhoto', uploadPhoto);
+app.use('/api/getPhotos', getPhotos);
 
 // Every time we get a request, log the path and method
 app.use((req, res, next) => {
