@@ -1,11 +1,15 @@
 // Signup.js
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/authContext';
 import './LandingPage/LandingPage.css';
 import './Signin.css'; // Import the new CSS file
 import logo from '../../../images/logo.png';
 import dorm from '../../../images/dorm.jpg';
+import { auth } from '../../../firebaseConfig';
+
+export const AuthContext = React.createContext()
+
 
 const Signup = () => {
   const { signup } = useAuth();
@@ -16,31 +20,16 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  console.log('Currently in signup page');
   const handleSignup = async () => {
     try {
       // Sign up the user
-      const response = await signup(email, password, firstName, lastName);
+      await signup(email, password, firstName, lastName);
 
-      if (response.ok) {
-        console.log('User signed up successfully.');
-        navigate('/signin');
-
-        // Check if the response includes an existing user (deleted)
-        const data = await response.json();
-        if (data.error && data.error.includes('User already exists')) {
-          console.log('Existing user detected. User deleted during signup.');
-        }
-      } else {
-        console.error('Failed to sign up. Please try again.');
-      }
+      navigate('/signin')
     } catch (error) {
       console.error('Error message is: ', error.message);
-      if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
-        setError('Email is already in use. Try again');
-      } else {
-        setError('Failed to sign up. Please try again.');
 
-      }
     }
   };
 
@@ -53,10 +42,10 @@ const Signup = () => {
         {/* <h1>CozyQuarter</h1> */}
         <img src={dorm} alt="Clipart of dorm" />
       </div>
-      
+
       <div className="signin-container">
         <div className="signin-message"><h2>Sign Up</h2></div>
-        
+
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
         <div className="input-container">
@@ -80,7 +69,7 @@ const Signup = () => {
             required
           />
         </div>
-        
+
         <div className="input-container">
           <label htmlFor="email">Email:</label>
           <input
