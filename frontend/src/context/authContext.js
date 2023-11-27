@@ -1,4 +1,19 @@
-// AuthContext.js
+/**
+ * Authentication Context
+ * 
+ * Provides the authentication context for the application, including user authentication state
+ * and functions for sign-up, login, logout, and password management.
+ * 
+ * Dependencies:
+ * - React: For creating context and components.
+ * - Firebase: For handling user authentication.
+ * 
+ * Exported Functions:
+ * - useAuth: A hook for accessing the authentication context.
+ * - AuthProvider: A component that wraps the application with authentication context.
+ * - handleLogout: A function for handling user logout with error handling.
+ */
+
 import React, { useContext, useState, useEffect } from 'react';
 import { auth } from '../firebaseConfig';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
@@ -60,7 +75,7 @@ export function AuthProvider({ children }) {
 
             return user; // Return the user object if needed
         } catch (error) {
-            console.error('Error during signup:', error.message);
+            console.log('Error during signup:', error.message);
             throw error; // Propagate the error
         }
     }

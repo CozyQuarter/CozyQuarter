@@ -1,3 +1,20 @@
+/**
+ * File Upload Configuration
+ * 
+ * This module configures multer for handling file uploads. It sets up storage options, file naming conventions,
+ * file type filtering, and size limits for uploads.
+ * 
+ * The storage configuration specifies the destination folder ('uploads/') and filenames (timestamp + original name).
+ * The file filter allows only image files to be uploaded, rejecting other file types.
+ * The multer instance is configured with these settings and a file size limit of 5 MB.
+ * 
+ * Dependencies:
+ * - multer: Middleware for handling multipart/form-data, primarily used for uploading files.
+ * 
+ * Exports:
+ * - Configured multer instance for use in routes where file uploads are required.
+ */
+
 const multer = require('multer');
 
 // Define storage settings for multer

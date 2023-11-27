@@ -1,4 +1,9 @@
-// Bray.js
+/**
+ * Bray Component
+ * 
+ * This component represents the dormitory review page for 'Bray'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Bray'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"

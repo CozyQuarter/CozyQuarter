@@ -64,4 +64,20 @@
     cursor: pointer; /* Change cursor when hovering over the button */
     border-radius: 4px; /* Add rounded corners */
     float: right;
+
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+    transform: translate(0, calc(var(--y, 0) * 1%)) scale(var(--scale, 1));
   }
+
+  .write-review-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+  }
+
+.margin {
+  margin-left: 100px;
+  position: "relative";
+  z-index: "100";
+  float: none;
+}

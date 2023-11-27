@@ -1,0 +1,42 @@
+/* Signin.css */
+.signin-button {
+    --borderWidth: 2;
+    --buttonColor: #c7edef;
+    --bg: hsl(0, 0%, 5%);
+    --backdrop: transparent;
+    --fontSize: 1;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+  
+    background: black; /* Start with a black background */
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    border-radius: 9999px;
+    text-align: center;
+    line-height: 24px;
+    color: var(--textColor, var(--buttonColor));
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 1rem);
+    font-weight: bold;
+    outline: transparent;
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: relative;
+    text-decoration: none !important;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+    transform: translate(0, calc(var(--y, 0) * 1%)) scale(var(--scale, 1));
+  }
+  
+  .signin-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+  }
+  
+  .signin-button:active {
+    --y: 0;
+    --scale: 0.95;
+  }

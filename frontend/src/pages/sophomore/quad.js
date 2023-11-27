@@ -1,4 +1,9 @@
-// Quad.js
+/**
+ * Quad Component
+ * 
+ * This component represents the dormitory review page for 'Quad'.
+ * It renders the 'ReviewPage' component with the dormitory ID 'Quad'.
+ */
 
 import React from 'react';
 import ReviewPage from "../components/ReviewPage"

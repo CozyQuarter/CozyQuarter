@@ -4,6 +4,7 @@
     flex-direction: row;
     /* Set the main axis as row to position elements from left to right */
     padding: 10px;
+    margin: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -171,12 +172,20 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 8px;
+    font-size: 0.6em;
     margin: 4px 2px;
     cursor: pointer;
     border: none;
     border-radius: 4px;
+
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+    transform: translate(0, calc(var(--y, 0) * 1%)) scale(var(--scale, 1));
   }
+  .report-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+}
   .modal-content .submit-cancel-button {
     background-color: #ea5455;
     color: white;

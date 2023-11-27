@@ -1,3 +1,22 @@
+/**
+ * User Management Controller
+ * 
+ * Manages user operations in the application, including user creation and retrieval by ID.
+ * 
+ * Functions:
+ * - createUser: Registers new users, checks for email uniqueness, hashes passwords with bcrypt, and returns the created user or a duplication message.
+ * - getUserById: Fetches a user by their ID and returns user data or a non-existence message.
+ * 
+ * Interacts with the User model for database operations and manages responses and errors.
+ * 
+ * Dependencies:
+ * - User model: MongoDB model for user data handling.
+ * - bcryptjs: Library for password hashing and security.
+ * 
+ * Exports:
+ * - A controller object containing the 'createUser' and 'getUserById' functions for user management operations.
+ */
+
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 

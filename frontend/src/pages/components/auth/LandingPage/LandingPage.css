@@ -53,47 +53,27 @@
 
 .input-container-container {
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   align-items: flex-start;
   width: 100%;
   max-width: 400px;
   margin-left: 50px;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .input-container label {
   display: block;
 }
 
-.input-container input[type="email"] {
-  width: 140%;
-  font-size: 1em;
-  /* Make it take up the entire width */
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #212121;
-  /* Add a red border */
-  border-radius: 4px;
-  outline: none;
-  /* Remove the default input outline */
-}
-
-.input-container input[type="password"] {
-  width: 140%;
-  font-size: 1em;
-  /* Make it take up the entire width */
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #212121;
-  /* Add a red border */
-  border-radius: 4px;
-  outline: none;
-  /* Remove the default input outline */
-}
-
+.input-container input[type="email"] ,
+.input-container input[type="password"] ,
 .input-container input[type="text"] {
-  width: 140%;
+  width: 120%;
   font-size: 1em;
   /* Make it take up the entire width */
   padding: 10px;
@@ -104,45 +84,4 @@
   border-radius: 4px;
   outline: none;
   /* Remove the default input outline */
-}
-
-.next-button {
-  width: 140%;
-  padding: 10px;
-  font-size: 1em;
-  background-color: red;
-  /* Adjust the color as needed */
-  color: #fff;
-  border: 1px solid red;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.signup-message {
-  margin-top: 20px;
-  font-size: 1em;
-}
-
-.signup-button {
-  text-decoration: inherit;
-  /* for some reason there is always an underline no matter what */
-  /* so I just made it red to hide it */
-  text-decoration-color: red;
-  justify-content: center;
-  width: 140%;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 1em;
-  background-color: red;
-  /* Adjust the color as needed */
-  color: #fff;
-  border: 1px solid red;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.guest-link {
-  margin-top: 10px;
-  font-size: 1em;
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from "../../../images/logo.png";
 import React, { useState, useEffect } from 'react';
-import DropdownMenu from '../DropdownMenu';
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 import { useAuth } from '../../../context/authContext';
 import MobileMenu from './MobileMenu';
 import './Header.css';
@@ -167,7 +167,7 @@ const Header = () => {
                     </Link>
                 ) : (
                     // If the user is not signed in, show "Sign In" button
-                    <Link to="../auth/Signin">
+                    <Link to="/Signin">
                         <h3>Sign In</h3>
                     </Link>
                 )}
