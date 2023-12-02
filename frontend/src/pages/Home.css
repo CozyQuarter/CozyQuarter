@@ -1,0 +1,32 @@
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .panels {
+      display: flex;
+      flex-direction: column;
+    }
+    .left-panel, .right-panel {
+      width: 100%;
+      text-align: center;
+    }
+    /* Adjust any other styles for smaller screens here */
+  }
+  
+  /* For larger screens */
+  @media (min-width: 1024px) {
+    .panels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .left-panel {
+      width: 50%;
+      padding: 20px;
+    }
+    .right-panel {
+      width: 50%;
+      padding: 20px;
+    }
+    /* Adjust any other styles for larger screens here */
+  }
+  

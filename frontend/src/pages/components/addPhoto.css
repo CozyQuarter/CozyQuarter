@@ -1,0 +1,55 @@
+/* ImageUpload.css */
+
+/* Red buttons and white overall design */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8; /* Light grayish white background */
+  }
+  
+  .auth-inner {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+  }
+  
+  /* Red buttons */
+ /* Button to sign in with Google or continue as guest */
+ .upload-button {
+    background-color: #ea5455; /* RPI's brand color */
+    color: white; /* Text color */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1em;
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove default text decoration */
+    margin: 4px 2px;
+    cursor: pointer; /* Change cursor when hovering over the button */
+    border-radius: 4px; /* Add rounded corners */
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+}
+
+.upload-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+}
+  
+  /* Drag-and-drop section styles */
+  .drag-drop-section {
+    border: 2px dashed #ccc; /* Dashed border */
+    padding: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .drag-drop-section:hover {
+    border-color: #666; /* Darker border color on hover */
+  }
+  

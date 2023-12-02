@@ -67,3 +67,78 @@
     flex-direction: column;
     align-items: flex-start;
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Add padding as needed */
+    /* ...other styles... */
+  }
+  
+  /* Adjust dropdown positioning */
+  /* .header > div {
+    position: relative;
+  }
+   */
+  .header > div > div {
+    /* position: absolute; */
+    /* top: 100%; */
+    left: 0;
+    /* Add other necessary styles */
+  }
+  .dropdown-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .arrow-down {
+    position: absolute;
+    top: calc(50% ); /* Adjust vertical position as needed */
+    left: calc(110% ); /* Adjust horizontal position as needed */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ff0000; /* Change color and size as needed */
+}
+.dropdown-wrapper:hover {
+    cursor: pointer;
+}
+.header-item {
+    position: relative;
+    cursor: pointer;
+    /* Other styles for your header items */
+}
+header .container a[href='/AllDorms/']:hover {
+   /* padding: 0px 5px;  Adjust the padding as needed */
+   /* margin: 2px; /* Adjust the margin as needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: rgba(235,235,235,1); /* Adjust the desired gray color */
+   line-height: 0.3; /*Adjust line height to vertically center the text*/
+  vertical-align: baseline;
+
+  }
+  
+  /* Add hover styles for the dropdown sections */
+  /* header .container div:hover h3 {
+    background-color: #f0f0f0; /* Adjust the desired gray color 
+  }
+/* Add hover styles for the Profile link when the user is signed in */
+header .container a[href='/profile']:hover {
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: rgba(235,235,235,1); /* Adjust the desired gray color */
+   line-height: 0.3; /*Adjust line height to vertically center the text*/
+  vertical-align: baseline;
+
+  }
+  header .container a[href='/Signin']:hover {
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: rgba(235,235,235,1); /* Adjust the desired gray color */
+   line-height: 0.3; /*Adjust line height to vertically center the text*/
+  vertical-align: baseline;
+
+  }
+
+
+
+  
