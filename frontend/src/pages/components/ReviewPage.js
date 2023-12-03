@@ -53,30 +53,30 @@ const SubRating = styled(Rating)({
 });
 
 const dorms = [
-	{ id: 'BARH', name: 'BARH', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite' },
-	{ id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: Infinity, double_price: Infinity, triple_price: 9790, room_type: 'Suite, Traditional' },
-	{ id: 'Bray', name: 'Bray Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional' },
-	{ id: 'Cary', name: 'Cary Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional' },
-	{ id: 'Crockett', name: 'Crockett Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional' },
-	{ id: 'Davison', name: 'Davison Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite' },
-	{ id: 'Hall', name: 'Hall Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional' },
-	{ id: 'Nason', name: 'Nason Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Traditional' },
-	{ id: 'Nugent', name: 'Nugent Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite' },
-	{ id: 'Sharp', name: 'Sharp Hall', folder: 'Freshman', year: 'Freshman, Arch', single_price: 10720, double_price: Infinity, triple_price: Infinity, room_type: 'Suite' },
-	{ id: 'Warren', name: 'Warren Hall', folder: 'Freshman', year: 'Freshman', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite' },
+	{ id: 'BARH', name: 'BARH', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Suite' },
+	{ id: 'Barton', name: 'Barton Hall', folder: 'Freshman', year: 'Freshman, Arch', singlePrice: Infinity, doublePrice: Infinity, triplePrice: 9790, room_type: 'Suite, Traditional' },
+	{ id: 'Bray', name: 'Bray Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Traditional' },
+	{ id: 'Cary', name: 'Cary Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Traditional' },
+	{ id: 'Crockett', name: 'Crockett Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Traditional' },
+	{ id: 'Davison', name: 'Davison Hall', folder: 'Freshman', year: 'Freshman, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Suite' },
+	{ id: 'Hall', name: 'Hall Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Traditional' },
+	{ id: 'Nason', name: 'Nason Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Traditional' },
+	{ id: 'Nugent', name: 'Nugent Hall', folder: 'Freshman', year: 'Freshman, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Suite' },
+	{ id: 'Sharp', name: 'Sharp Hall', folder: 'Freshman', year: 'Freshman, Arch', singlePrice: 10720, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Suite' },
+	{ id: 'Warren', name: 'Warren Hall', folder: 'Freshman', year: 'Freshman', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Suite' },
 
-	{ id: 'Blitman', name: 'Blitman', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Suite' },
-	{ id: 'Bryckwyck', name: 'Bryckwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
-	{ id: 'Colonie', name: 'Colonie', folder: 'Sophomore', year: 'Sophomore', single_price: Infinity, double_price: 9120, triple_price: Infinity, room_type: 'Suite' },
-	{ id: 'EComplex', name: 'E-Complex', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional' },
-	{ id: 'North', name: 'North Hall', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: Infinity, room_type: 'Traditional' },
-	{ id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', single_price: 10720, double_price: 9460, triple_price: 8270, room_type: 'Suite, Traditional' },
-	{ id: 'RAHPA', name: 'RAHP-A', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
-	{ id: 'RAHPB', name: 'RAHP-B', folder: 'Sophomore', year: 'Sophomore', single_price: 8540, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
-	{ id: 'Stacwyck', name: 'Stacwyck', folder: 'Sophomore', year: 'Sophomore', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
+	{ id: 'Blitman', name: 'Blitman', folder: 'Sophomore', year: 'Sophomore, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Suite' },
+	{ id: 'Bryckwyck', name: 'Bryckwyck', folder: 'Sophomore', year: 'Sophomore', singlePrice: 8540, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
+	{ id: 'Colonie', name: 'Colonie', folder: 'Sophomore', year: 'Sophomore', singlePrice: Infinity, doublePrice: 9120, triplePrice: Infinity, room_type: 'Suite' },
+	{ id: 'EComplex', name: 'E-Complex', folder: 'Sophomore', year: 'Sophomore, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Traditional' },
+	{ id: 'North', name: 'North Hall', folder: 'Sophomore', year: 'Sophomore, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: Infinity, room_type: 'Traditional' },
+	{ id: 'Quad', name: 'Quadrangle', folder: 'Sophomore', year: 'Sophomore, Arch', singlePrice: 10720, doublePrice: 9460, triplePrice: 8270, room_type: 'Suite, Traditional' },
+	{ id: 'RAHPA', name: 'RAHP-A', folder: 'Sophomore', year: 'Sophomore', singlePrice: 8540, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
+	{ id: 'RAHPB', name: 'RAHP-B', folder: 'Sophomore', year: 'Sophomore', singlePrice: 8540, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
+	{ id: 'Stacwyck', name: 'Stacwyck', folder: 'Sophomore', year: 'Sophomore', singlePrice: 10290, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
 
-	{ id: 'CityStationWest', name: 'City Station West', folder: 'Upperclass', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
-	{ id: 'Polytechnic', name: 'Polytechnic', folder: 'Upperclass', year: 'Upperclass', single_price: 10290, double_price: Infinity, triple_price: Infinity, room_type: 'Apartment' },
+	{ id: 'CityStationWest', name: 'City Station West', folder: 'Upperclass', year: 'Upperclass', singlePrice: 10290, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
+	{ id: 'Polytechnic', name: 'Polytechnic', folder: 'Upperclass', year: 'Upperclass', singlePrice: 10290, doublePrice: Infinity, triplePrice: Infinity, room_type: 'Apartment' },
 ];
 
 const ReviewPage = ({ dorm_id }) => {
@@ -140,13 +140,13 @@ const ReviewPage = ({ dorm_id }) => {
         });
     }
 
-    let img_path = dorm_id + ".png";
+    let imgPath = dorm_id + ".png";
     var dorm = dorms.filter(d => d.id.toLowerCase() === dorm_id.toLowerCase());
     dorm = dorm[0];
 
-    const singles = dorm.single_price < Infinity ? `$${dorm.single_price}` : '-';
-    const doubles = dorm.double_price < Infinity ? `$${dorm.double_price}` : '-';
-    const triples = dorm.triple_price < Infinity ? `$${dorm.triple_price}` : '-';
+    const singles = dorm.singlePrice < Infinity ? `$${dorm.singlePrice}` : '-';
+    const doubles = dorm.doublePrice < Infinity ? `$${dorm.doublePrice}` : '-';
+    const triples = dorm.triplePrice < Infinity ? `$${dorm.triplePrice}` : '-';
 
 	return (
 		<div className="body">
@@ -166,7 +166,8 @@ const ReviewPage = ({ dorm_id }) => {
 					<OverallRating value={averageRatings.overallRating} precision={0.5} readOnly/>
 					<span> {averageRatings.overallRating.toFixed(2)} </span>
 					<span>
-					  ({averageRatings.totalReviews ? averageRatings.totalReviews : 0} {averageRatings.totalReviews === 1 ? 'review' : 'reviews'})
+					  ({averageRatings.totalReviews ? averageRatings.totalReviews : 0}
+					  {averageRatings.totalReviews === 1 ? ' review' : ' reviews'})
 					</span>
 				  </h3>
 	
@@ -193,7 +194,7 @@ const ReviewPage = ({ dorm_id }) => {
 			</div>
 	
 			<div className="right-panel2">
-			  <img src={require(`../../images/${img_path}`)} alt="Outside of dorm" className="dorm-image" />
+			  <img src={require(`../../images/${imgPath}`)} alt="Outside of dorm" className="dorm-image" />
 			  <Link to={`/viewPhotos/${dorm_id}`} className="photos-button"><b> View Photos </b></Link>
             {/* ^ Changed "See Photos" text to a Link for navigation */}
         </div>

@@ -59,9 +59,6 @@ function App() {
           <Route path="/writeReview/:dorm_id" element={<WriteReview />} />
           <Route path="/addPhoto/:dorm_id" element={<AddPhoto />} />
           <Route path="/viewPhotos/:dorm_id" element={<ViewPhotos />} />
-
-
-
           <Route path="/" element={<LandingPage />} />
 
           {/* Other pages have Header and Footer */}
