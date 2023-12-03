@@ -1,5 +1,50 @@
 /* Header.css */
 
+/* header and dropdown */
+header a {
+    background: #fff;
+    color: #ea5455;
+    text-decoration: none;
+}
+header .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ea5455;
+    position: relative;
+    z-index: 10000;
+}
+  
+/* footer */
+footer a {
+    color: #212121;
+    text-decoration: none;
+    z-index: 0;
+}
+.footer {
+    margin-top:20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    background-color:#f2f2f2;
+    background-clip: border-box;
+    z-index: 1;
+    position: relative;
+}
+
 /* Common styles for the mobile menu overlay */
 .menu-overlay {
     position: fixed;
@@ -138,6 +183,39 @@ header .container a[href='/profile']:hover {
   vertical-align: baseline;
 
   }
+
+
+  /* Hover styles for footer */
+
+.footer a[href='/FAQ/']:hover {
+    /* padding: 0px 5px;  Adjust the padding as needed */
+    /* margin: 2px; /* Adjust the margin as needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #cfcfcf; /* Adjust the desired gray color */
+    line-height: 0.3; /*Adjust line height to vertically center the text*/
+    vertical-align: baseline;
+
+}
+
+.footer a[href='/Rules/']:hover {
+/* padding: 0px 5px;  Adjust the padding as needed */
+/* margin: 2px; /* Adjust the margin as needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #cfcfcf; /* Adjust the desired gray color */
+    line-height: 0.3; /*Adjust line height to vertically center the text*/
+    vertical-align: baseline;
+
+}
+
+.footer a[href='/AboutUs/']:hover {
+    /* padding: 0px 5px;  Adjust the padding as needed */
+    /* margin: 2px; /* Adjust the margin as needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #cfcfcf; /* Adjust the desired gray color */
+    line-height: 0.3; /*Adjust line height to vertically center the text*/
+    vertical-align: baseline;
+    
+}
 
 
 

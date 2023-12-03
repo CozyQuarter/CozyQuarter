@@ -14,6 +14,7 @@
 
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import './Header.css';
 
 const Footer = () => {
 
@@ -26,7 +27,7 @@ const Footer = () => {
                 onClick={() => {
                     window.scroll(0, 0);
                 }}>
-                    <h3> Resources/FAQ </h3>
+                    <h3> FAQ </h3>
                 </Link>
 
                 <Link to = "/Rules/"

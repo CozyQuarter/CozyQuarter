@@ -26,7 +26,7 @@ const Signup = () => {
       // Sign up the user
       await signup(email, password, firstName, lastName);
 
-      navigate('/signin')
+      navigate('/home') // Go to home when they sign in
     } catch (error) {
       console.error('Error message is: ', error.message);
 

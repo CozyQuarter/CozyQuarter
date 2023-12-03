@@ -242,7 +242,7 @@ const ReviewPage = ({ dorm_id }) => {
 			</div>
 		  </div>
 	
-		  <div className="left-panel">
+		  <div>
 			{reviews && reviews.length > 0 ? (
 			  reviews.map((review, index) => (
 				<Review key={index} reviewData={review} />

@@ -31,11 +31,19 @@ function ViewPhotos() {
     return (
         <div className="photo-container">
             <h2>Photos for Dorm ID: {dorm_id}</h2>
-            <div className="image-grid">
-                {images.map((image, index) => (
-                    <img key={index} src={image} alt={`Image ${index}`} className="photo" />
-                ))}
-            </div>
+
+            {images && images.length > 0 ? ( // Display images if there are any
+
+                <div className="image-grid">
+                    {images.map((image, index) => (
+                        <img key={index} src={image} alt={`Dorm ${index}`} className="photo" />
+                    ))}
+                </div>
+
+            ) : (
+                <p>No images available for this dorm.</p> // Display a message when there are no images
+            )}
+
         </div>
     );
 }
