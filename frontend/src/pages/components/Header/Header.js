@@ -99,20 +99,16 @@ const Header = () => {
     const handleMouseLeave = () => {
         setVisibleDropdown('');
     }
+   // Function to check if a menu label has dropdown items
+   const hasDropdown = (label) => {
+    return menuItems[label.toLowerCase()] && menuItems[label.toLowerCase()].length > 0;
+};
+    
 
     return (
         <header style={{ position: 'relative' }}>
             <div className="container">
-                {windowWidth <= mobileMenuBreakpoint && (
-                    // Show mobile menu if screen size is small
-                    <div className="mobile-menu-button" onClick={() => setMenuOpen(!isMenuOpen)}>
-                        <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`}>
-                            <div className="bar"></div>
-                            <div className="bar"></div>
-                            <div className="bar"></div>
-                        </div>
-                    </div>
-                )}
+            
 
       
       <Link to="/Home/">
@@ -125,12 +121,15 @@ const Header = () => {
                 <div
                     onMouseEnter={() => handleMouseEnter('freshman')}
                     onMouseLeave={handleMouseLeave}
+                    // className="header-item"
                     style={{ position: 'relative' }}
                 >
                     <h3>Freshman</h3>
+                    <div className="arrow-down"></div>
                     {visibleDropdown === 'freshman' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
                             <DropdownMenu items={menuItems.freshman} />
+                           
                         </div>
                     )}
                 </div>
@@ -138,9 +137,11 @@ const Header = () => {
                 <div
                     onMouseEnter={() => handleMouseEnter('sophomore')}
                     onMouseLeave={handleMouseLeave}
+                    // className="header-item"
                     style={{ position: 'relative' }}
                 >
                     <h3>Sophomore</h3>
+                    <div className="arrow-down"></div>
                     {visibleDropdown === 'sophomore' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
                             <DropdownMenu items={menuItems.sophomore} />
@@ -151,9 +152,11 @@ const Header = () => {
                 <div
                     onMouseEnter={() => handleMouseEnter('upperclass')}
                     onMouseLeave={handleMouseLeave}
+                    className="header-item"
                     style={{ position: 'relative' }}
                 >
                     <h3>Upperclass</h3>
+                    <div className="arrow-down"></div>
                     {visibleDropdown === 'upperclass' && (
                         <div style={{ position: 'absolute', top: '100%', left: 0 }}>
                             <DropdownMenu items={menuItems.upperclass} />

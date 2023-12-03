@@ -33,6 +33,9 @@ import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import { useAuth } from '../../context/authContext';
 import Review from './Review';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const OverallRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
@@ -222,11 +225,17 @@ const ReviewPage = ({ dorm_id }) => {
 			  ) : (
 				<>
               <Link to={`/writeReview/${dorm_id}`} className="write-review-button" onClick={() => window.scroll(0, 0)}>
-                Write a Review
-              </Link>
+            <span style={{ marginRight: '8px' }}> {/* Adjust margin-right as needed */}
+              <FontAwesomeIcon icon={faStar} />
+            </span>
+            Write a Review
+          </Link>
               <Link to={`/addPhoto/${dorm_id}`} className="add-photo-button" onClick={() => window.scroll(0, 0)}>
-                Add Photo
-              </Link>
+			  <span style={{ marginRight: '8px' }}> {/* Adjust margin-right as needed */}
+              <FontAwesomeIcon icon={faCamera} />
+            </span>
+            Add Photo
+          </Link>
             </>
 				
 			  )}

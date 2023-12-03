@@ -13,6 +13,7 @@
  * - MapComponent: A React component for displaying the campus map.
  */
 
+
 function MapComponent() {
 	return (
 	  <div className="map-container">

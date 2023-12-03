@@ -36,20 +36,32 @@
 
 
 /* Button to see all photos of a dorm */
-/* TODO: Fix position so it's not absolute, and depends on the picture instead */
 .photos-button {
-    color: white;
-    font-size: 1.5em;
-    text-shadow:
-         2px 2px 0 #000,
-       -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-         1px 1px 0 #000;
-    position: absolute;
-    right: 40px;
-    bottom: 20px;
+  color: white;
+  font-size: 1em;
+  background-color: transparent; /* Make the background transparent */
+  padding: 10px 20px; /* Add some padding */
+  border: 1px solid white; /* Add white border */
+  text-align: center; /* Center the text */
+    text-decoration: none; /* Remove default text decoration */
+    margin: 4px 2px;
+  
+  outline: none; /* Remove outline */
+  transition: background-color 0.3s ease; /* Add transition effect only for background color */
+  border-radius: 4px; /* Add rounded corners */
+  float: right;
+
+  /* Your existing text shadow styles */
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
 }
+
+.photos-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Change the background color on hover */
+}
+
 
 /* Button to sign in with Google or continue as guest */
 .write-review-button {
@@ -70,6 +82,28 @@
   }
 
   .write-review-button:hover {
+    --y: -5;
+    --scale: 1.05;
+    background: red; /* Change background color to red on hover */
+  }
+  .add-photo-button {
+    background-color: #ea5455; /* RPI's brand color */
+    color: white; /* Text color */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1em;
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove default text decoration */
+    margin: 4px 2px;
+    cursor: pointer; /* Change cursor when hovering over the button */
+    border-radius: 4px; /* Add rounded corners */
+    float: right;
+
+    transition: transform 0.2s, background 0.2s; /* Add transition for background color */
+    transform: translate(0, calc(var(--y, 0) * 1%)) scale(var(--scale, 1));
+  }
+
+  .add-photo-button:hover {
     --y: -5;
     --scale: 1.05;
     background: red; /* Change background color to red on hover */

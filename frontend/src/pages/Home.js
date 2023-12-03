@@ -11,6 +11,7 @@ import dorm from '../images/dorm.jpg';  // Make sure to import the image
 import MapComponent from './components/CampusMap';
 import logo from '../images/logo.png';
 import './components/Menu.css';
+import './Home.css';
 
 const Home = () => {
 
@@ -20,7 +21,7 @@ const Home = () => {
 
             </div>
             <div className="panels">
-                <div className="left-panel">
+                <div className="left-panel responsive-left">
                     <div className="custom-heading">
                         <b>Welcome to CozyQuarter</b>
                     </div>
@@ -33,7 +34,7 @@ const Home = () => {
                         well-informed campus living choice awaits!
                     </p>
                 </div>
-                <div className="right-panel">
+                <div className="right-panel responsive-right">
                     <img src={dorm} alt="Descriptive text" className="responsive-image" />
                 </div>
             </div>

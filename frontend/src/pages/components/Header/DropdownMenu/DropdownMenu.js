@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './DropdownMenu.css';
 
@@ -17,11 +17,7 @@ const DropdownMenu = ({ items }) => {
                 item.isDivider ? (
                     <div key={index} className="divider"></div>
                 ) : (
-                item.label === 'BARH' ? (
-                    <Link key={index} to={`/freshman/barh`}>
-              <div>{item.label}</div>
-            </Link>
-                ) :   
+     
                     <Link key={index} to={item.link}>
                         <div>{item.label}</div>
                     </Link>
@@ -30,8 +26,12 @@ const DropdownMenu = ({ items }) => {
         </div>
         
     );
-    
-    
-};
-
+                };
 export default DropdownMenu;
+
+
+    //     item.label === 'BARH' ? (
+            //         <Link key={index} to={`/freshman/barh`}>
+            //   <div>{item.label}</div>
+            // </Link>
+            //     ) :  
