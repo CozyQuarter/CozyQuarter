@@ -42,9 +42,9 @@ const Review = ({ reviewData, hideReportButton  }) => {
             .send('service_fejaqky', 'template_non52vq', {
                 to_name: 'Cozy Quarter',
                 from_name: 'Review Reporting System',
-                message: `Review with ID: ${reviewData.id} has been reported for the following reasons: ${selectedReasons.join(
-                    ', '
-                )}. Additional details: ${details}`,
+                review_id: reviewData._id,
+                reasons: selectedReasons.join(', '),
+                details: details,
                 to_email: 'cozyquarterco@gmail.com',
             }, 'eVMVEPjKWovC9tqCP')
             .then((response) => {
