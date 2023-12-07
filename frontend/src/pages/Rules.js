@@ -34,7 +34,7 @@ const Rules = () => {
                     <img src={dorm} alt="Descriptive text" className="responsive-image" />
                 </div>
             </div>
-            <div className="left-panel">
+            <div className="panel">
             <ol>
                 <li><b>No Hate Speech or Discrimination:</b> Do not post
                     reviews that contain hate speech, discrimination, or offensive content related
@@ -57,7 +57,7 @@ const Rules = () => {
             </ol>
             </div>
 
-            <div className="left-panel">
+            <div className="panel">
             <p>
             By following these guidelines, you contribute to a welcoming and informative community.
             Thank you for your cooperation!
