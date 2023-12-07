@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
-const routes = require('./routes');
-const bcrypt = require('bcryptjs');
-const User = require('./models/User');
-const Review = require('./models/Review');
+// const routes = require('./routes');
+// const bcrypt = require('bcryptjs');
+// const User = require('./models/User');
+// const Review = require('./models/Review');
 const checkUser = require('./api/checkUser');
 const createUser = require('./api/createUser');
 const submitReview = require('./api/submitReview');
@@ -16,11 +16,11 @@ const uploadPhoto = require('./api/uploadPhoto');
 const getPhotos = require('./api/getPhotos');
 const app = express();
 const path = require("path");
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const session = require('express-session');
-const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
-const Grid = require('gridfs-stream');
-const { ObjectId } = require('mongoose').Types; // Import ObjectId from mongoose
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const session = require('express-session');
+// const uri = "mongodb+srv://Brandon:041502Brandon@cluster0.h0nvx1v.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+// const Grid = require('gridfs-stream');
+// const { ObjectId } = require('mongoose').Types; // Import ObjectId from mongoose
 
 
 
