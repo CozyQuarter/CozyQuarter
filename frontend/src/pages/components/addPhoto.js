@@ -63,8 +63,9 @@ function ImageUpload() {
         })
             .then((response) => {
                 if (response.ok) {
-                    return response.json();
                     navigate(-1);
+                    return response.json();
+                 
                 } else {
                     throw new Error(`Error: ${response.status}`);
                 }
