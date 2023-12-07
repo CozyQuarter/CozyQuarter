@@ -29,7 +29,7 @@ const LandingPage = () => {
     } else if (step === 2) {
       if (passwordRef.current && passwordRef.current.value) {
         setError('');
-        navigate('/signin');
+        navigate('/home');
       } else {
         setError('Please enter your password.');
       }
