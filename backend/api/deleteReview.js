@@ -30,7 +30,7 @@ router.delete('/:reviewId', async (req, res) => {
 
     try {
         // Find the review by ID and remove it
-        const deletedReview = await Review.findByIdAndRemove(reviewId);
+        const deletedReview = await Review.findByIdAndDelete(reviewId);
 
         // Log the reviewId before removal
         // console.log('User reviews before removal:', (await User.find()).map(user => user.reviews));
